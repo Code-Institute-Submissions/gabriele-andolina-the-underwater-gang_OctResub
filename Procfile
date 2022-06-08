@@ -1,1 +1,1 @@
-web: gunicorn the-underwater-gang.wsgi
+web: gunicorn the_underwater_gang.wsgi
