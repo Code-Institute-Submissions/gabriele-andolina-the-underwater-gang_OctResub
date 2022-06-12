@@ -1,2 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;1,500&family=Permanent+Marker&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    font-family: "Exo", "Times New Roman", sans-serif;
+    font-weight: 400;
+}
+
+/******************** Navbar ********************/
+
+#logo, #logo a {
+    float: left;
+    font-family: "Permanent Marker", "Times New Roman", sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    color: white;
+}
+
+.nav-item {
+    font-family: "Exo", "Times New Roman", sans-serif;
+    font-weight: 400;
+}
+
+ul li {
+    font-size: 18px;
+}
+
+.navbar-color {
+    background-color: #06283D;
+}
