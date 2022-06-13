@@ -46,8 +46,9 @@ ul li {
 }
 
 footer a {
-    color: white;
     font-family: "Exo 2", "Times New Roman", sans-serif;
-    position: absolute;
-    margin-top: 1%;
+}
+
+.footer-info {
+    color: white;
 }
