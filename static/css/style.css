@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;1,500&family=Permanent+Marker&display=swap');
 
+/******************** Main and Body ********************/
+
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +9,14 @@
 }
 
 body {
-    font-family: "Exo", "Times New Roman", sans-serif;
+    height: 100%;
+    font-family: "Exo 2", "Times New Roman", sans-serif;
     font-weight: 400;
 }
 
 /******************** Navbar ********************/
 
-#logo, #logo a {
+#logo {
     float: left;
     font-family: "Permanent Marker", "Times New Roman", sans-serif;
     font-weight: 400;
@@ -21,15 +24,30 @@ body {
     color: white;
 }
 
-.nav-item {
-    font-family: "Exo", "Times New Roman", sans-serif;
+.nav-item a {
+    font-family: "Exo 2", "Times New Roman", sans-serif;
     font-weight: 400;
+    color: white;
 }
 
 ul li {
     font-size: 18px;
 }
 
-.navbar-color {
+.navbar {
+    background-color: #06283D !important;
+}
+
+/******************** Footer ********************/
+
+#footer {
     background-color: #06283D;
+    height: 60px;
+}
+
+footer a {
+    color: white;
+    font-family: "Exo 2", "Times New Roman", sans-serif;
+    position: absolute;
+    margin-top: 1%;
 }
