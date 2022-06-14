@@ -35,13 +35,13 @@ ul li {
 }
 
 .navbar {
-    background-color: #06283D !important;
+    background-color: #00B4D8 !important;
 }
 
 /******************** Footer ********************/
 
 #footer {
-    background-color: #06283D;
+    background-color:  #00B4D8;
     height: 60px;
 }
 
@@ -51,4 +51,27 @@ footer a {
 
 .footer-info {
     color: white;
+}
+
+/******************** Post Card ********************/
+
+.card {
+    border-color: black;
+    background-color: #CAF0F8;
+}
+
+.author {
+    text-align: center;
+    font-style: italic;
+}
+
+.post-link {
+    text-align: center;
+    text-decoration: underline;
+    color: #03045E;
+}
+
+.card-text {
+    text-align: center;
+    font-size: 15px;
 }
