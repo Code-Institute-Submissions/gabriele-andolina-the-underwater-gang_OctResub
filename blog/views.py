@@ -20,7 +20,7 @@ class PostContent(View):
 
         return render(
             request, 
-            'post_content.html'
+            'post_content.html',
             {
                 "post": post,
                 "comments": comments,
