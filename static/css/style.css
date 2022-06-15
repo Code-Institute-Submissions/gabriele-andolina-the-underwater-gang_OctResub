@@ -57,7 +57,7 @@ footer a {
 
 .card {
     border-color: black;
-    background-color: #CAF0F8;
+    background-color: #D7FBE8;
 }
 
 .author {
@@ -68,10 +68,26 @@ footer a {
 .post-link {
     text-align: center;
     text-decoration: underline;
-    color: #03045E;
+    color: black;
 }
 
 .card-text {
     text-align: center;
     font-size: 15px;
+}
+
+/******************** Pagination Links ********************/
+
+.current {
+    position: relative;
+    margin-bottom: 2px
+}
+
+.pagination {
+    height: 120px;
+}
+
+.pagination a {
+    border-color: #1363DF !important;
+    color: #1363DF;
 }
