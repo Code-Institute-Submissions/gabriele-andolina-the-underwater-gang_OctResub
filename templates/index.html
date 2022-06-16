@@ -20,7 +20,7 @@
                                 <img class="card-img-top" src=" {{ post.image.url }}" alt="">
                                 {% endif %}
                                 <div>
-                                    <p class="author">By: {{ post.author }}</p>
+                                    <p class="author text-muted">By: {{ post.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'post_content' post.slug %}" class="post-link">

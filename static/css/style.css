@@ -57,7 +57,7 @@ footer a {
 
 .card {
     border-color: black;
-    background-color: #D7FBE8;
+    background-color: #ECFCFF;
 }
 
 .author {
@@ -90,4 +90,28 @@ footer a {
 .pagination a {
     border-color: #1363DF !important;
     color: #1363DF;
+}
+
+/******************** Post Content ********************/
+
+.post-title {
+    text-align: center;
+}
+
+.post-content {
+    text-align: center;
+    border: none !important;
+    background-color: transparent !important;
+    height: 80vh;
+}
+
+
+/******************** Media Queries ********************/
+/******************** Screen size of 1200px and up ********************/
+
+@media screen and (min-width: 120px) {
+    
+    .post-content {
+        height: 100vh;
+    }
 }
