@@ -26,6 +26,15 @@
                                 <p class="card-text">
                                     {{ post.content | safe }}
                                 </p>
+                                <div class="row">
+                                    <div class="col">
+                                        {% with total=comments.count %}
+                                        <i class="fa-solid fa-comment"> {{ total }}</i>
+                                        {% endwith %}
+                                    </div>
+                                </div>
+
+
                             </div>
                     </div>
                 </div> 
