@@ -19,7 +19,6 @@
                     <p class="author text-muted">By: {{ post.author }}</p>
                 </div>
             </div>
-            <div class="container">
                 <div class="row">
                     <div class="col col-md-12 card">
                             <div class="card-body post-content">
@@ -27,20 +26,18 @@
                                     {{ post.content | safe }}
                                 </p>
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-1">
+                                        <i class="fa-light fa-heart"> {{ post.likes_tally }}</i>
+                                    </div>
+                                    <div class="col-1">
                                         {% with total=comments.count %}
                                         <i class="fa-solid fa-comment"> {{ total }}</i>
                                         {% endwith %}
                                     </div>
                                 </div>
-
-
                             </div>
                     </div>
                 </div> 
-            </div>
-                
-
         </div>
     </div>
 </div>
