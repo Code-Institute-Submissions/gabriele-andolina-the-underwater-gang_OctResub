@@ -116,21 +116,21 @@ footer a {
     color: white;
 }
 
-.sign-up-link {
+.sign-up-link, .sign-in-link {
     color: white;
 }
 
-.sign-up-link:hover {
+.sign-up-link:hover, .sign-in-link:hover {
     color: #F9F871;
 }
 
-.sign-in-btn {
+.sign-in-btn, .sign-up-btn {
     border-style: solid 2px white !important;
     background-color: #00B4D8;
     color: white;
 }
 
-.sign-in-btn:hover {
+.sign-in-btn:hover, .sign-up-btn:hover {
     border-style: solid 2px #00B4D8 !important;
     background-color: white;
     color: #00B4D8;

@@ -24,6 +24,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def likes_tally(self):
+        return self.likes.count()
+
 
 class Comment(models.Model):
 
