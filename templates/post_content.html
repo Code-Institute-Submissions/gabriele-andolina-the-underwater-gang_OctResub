@@ -23,22 +23,21 @@
             </div>
             <div class="row mb-5">
                 <div class="col col-md-12 card card-body post-content mb-5">
-                        <!-- <div class="card-body post-content"> Se rimetti questa cancella le classi qui sopra-->
-                            <p class="card-text">
-                                {{ post.content | safe }}
-                            </p>
-                            <div class="row">
-                                <div class="col-1">
-                                    <i class="fa-light fa-heart"> {{ post.likes_tally }}</i>
-                                </div>
-                                <div class="col-1">
-                                    {% with total=comments.count %}
-                                    <i class="fa-solid fa-comment"> {{ total }}</i>
-                                    {% endwith %}
-                                </div>
-                            </div>
-                <!-- </div> -->
-            </div> 
+                    <p class="card-text">
+                        {{ post.content | safe }}
+                    </p>
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fa-light fa-heart"> {{ post.likes_tally }}</i>
+                        </div>
+                        <div class="col-1">
+                            {% with total=comments.count %}
+                            <i class="fa-solid fa-comment"> {{ total }}</i>
+                            {% endwith %}
+                        </div>
+                    </div>
+                </div> 
+            </div>
         </div>
     </div>
 </div>
