@@ -99,10 +99,9 @@ footer a {
 }
 
 .post-content {
-    text-align: center;
-    border: none !important;
-    background-color: transparent !important;
-    height: 80vh;
+    text-align: justify;
+    border: none;
+    background-color: transparent;
 }
 
 /******************** Credentials Box - Sign in/Sign up ********************/
