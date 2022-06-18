@@ -32,15 +32,15 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa fa-solid fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa-regular fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
-                            <span><i class="far fa-heart"></i></span>
+                            <i class="fa-regular fa-heart"></i>
                             {% endif %}
-                            <i class="fa fa-thin fa-heart"> {{ post.likes_tally }}</i>
+                            {{ post.likes_tally }}
                             {% with total=comments.count %}
                             <i class="fa-solid fa-comment"> {{ total }}</i>
                             {% endwith %}
