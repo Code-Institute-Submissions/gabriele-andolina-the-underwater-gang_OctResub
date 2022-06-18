@@ -123,19 +123,33 @@ footer a {
     color: #F9F871;
 }
 
-.sign-in-btn, .sign-up-btn {
+.sign-in-btn, .sign-up-btn, .comment-btn {
     border-style: solid 2px white !important;
     background-color: #00B4D8;
     color: white;
 }
 
-.sign-in-btn:hover, .sign-up-btn:hover {
+.sign-in-btn:hover, .sign-up-btn:hover, .comment-btn:hover {
     border-style: solid 2px #00B4D8 !important;
     background-color: white;
     color: #00B4D8;
 }
 
+/******************** Comments Section ********************/
 
+.comments-section {
+    background-color: #F9F871;
+}
+
+.comment-card {
+    background-color: white;
+    border: none;
+    background-color: #F9F871;
+}
+
+.comment-title {
+    text-align: center;
+}
 
 
 /******************** Media Queries ********************/

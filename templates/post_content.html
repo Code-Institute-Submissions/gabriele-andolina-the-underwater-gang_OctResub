@@ -36,6 +36,33 @@
                             {% endwith %}
                         </div>
                     </div>
+
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-5 mt-4 card comment-card">
+                                <div class="card-body">
+                                    {% if user.is_authenticated %}
+                                    <h3 class="comment-title">Let us know what you think!</h3>
+                                    <p>Diver: {{ user.username }}</p>
+                                    <form method="post">
+                                        {{ comment_form | crispy }}
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-light comment-btn">Post</button>
+                                    </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-7 mt-4 card comment-card">
+                                <div class="card-body">
+                                    <h3 class="comment-title">Comments</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                 </div> 
             </div>
         </div>
