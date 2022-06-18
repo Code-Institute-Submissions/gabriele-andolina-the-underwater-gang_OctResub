@@ -67,12 +67,12 @@ class PostContent(View):
 
 class PostLike(View):
 
-    def post(self, request, slug):
+    def post(self, request, slug, *arg, **kwargs):
         post = get_object_or_404(Post, slug=slug)
 
-        if post.likes.filter(id=request.user.id).exists():
+        if post.likes.filter(username=request.user.username).exists():
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_content.html', args=[slug]))
+        return HttpResponseRedirect(reverse('post_content', args=[slug]))
