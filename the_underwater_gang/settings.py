@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import sys
 
 if os.path.isfile("env.py"):
     import env
@@ -35,6 +36,8 @@ ALLOWED_HOSTS = ["the-underwater-gang.herokuapp.com", "localhost"]
 
 # Application definition
 
+sys.modules['fontawesome_free'] = __import__('fontawesome-free')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,6 +53,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
+    'fontawesome_free',
     'blog',
 ]
 

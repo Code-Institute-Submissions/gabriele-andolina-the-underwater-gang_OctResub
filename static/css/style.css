@@ -137,19 +137,18 @@ footer a {
 
 /******************** Comments Section ********************/
 
-.comments-section {
-    background-color: #F9F871;
-}
-
 .comment-card {
-    background-color: white;
-    border: none;
     background-color: #F9F871;
+    border: none;
 }
 
-.comment-title {
+.comment-header {
     text-align: center;
 }
 
+.comment-body {
+    border: solid 1px black;
+    background-color: white;
+}
 
 /******************** Media Queries ********************/
