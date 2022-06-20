@@ -7,7 +7,7 @@
 
         {% if user.is_authenticated %}
         <div class="col mt-4">
-            <button class="btn btn-light btn-lg btn-block write-post-btn">Write a post</button>
+            <a href="{% url 'post_create' %}" class="btn btn-light btn-lg btn-block write-post-btn">Write a post</a>
         </div>
         {% endif %}
 

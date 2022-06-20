@@ -123,13 +123,15 @@ footer a {
     color: #F9F871;
 }
 
-.sign-in-btn, .sign-up-btn, .comment-btn {
+/******************** Buttons ********************/
+
+.sign-in-btn, .sign-up-btn, .comment-btn, .write-post-btn {
     border-style: solid 2px white !important;
     background-color: #00B4D8;
     color: white;
 }
 
-.sign-in-btn:hover, .sign-up-btn:hover, .comment-btn:hover {
+.sign-in-btn:hover, .sign-up-btn:hover, .comment-btn:hover, .write-post-btn:hover {
     border-style: solid 2px #00B4D8 !important;
     background-color: white;
     color: #00B4D8;
@@ -150,5 +152,3 @@ footer a {
     border: solid 1px black;
     background-color: white;
 }
-
-/******************** Media Queries ********************/
