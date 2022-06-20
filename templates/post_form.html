@@ -5,29 +5,23 @@
 {% block content%}
 
 <div class="container">
-    <div class="row">
-        <div class="col">
+    <div class="row ">
+        <div class="col mt-4">
 
-            <h2>My New Post</h2>
-            <form method="post" style="margin-top: 1.3em;">
-                {{ form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-lg">Post</button>
-            </form>
+            <div class="mt-2 card">
+                <div class="card-body mb-5 post-form">
+                    <h2 >My New Post</h2>
+                    <form method="post">
+                        {{ form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-signup btn-lg write-post-btn">Post</button>
+                    </form>
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 
 
 {% endblock content%}

@@ -152,3 +152,9 @@ footer a {
     border: solid 1px black;
     background-color: white;
 }
+
+/******************** Post Form ********************/
+
+.form {
+    margin-bottom: 50px !important;
+}
