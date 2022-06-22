@@ -1,9 +1,14 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import (
+                            render,
+                            get_object_or_404,
+                            reverse,
+                            )
 from django.views import generic, View
 from django.views.generic.edit import CreateView
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
-from .forms import CommentForm, PostForm
+from .forms import CommentForm
 
 
 class PostList(generic.ListView):
@@ -79,10 +84,14 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_content', args=[slug]))
 
 
-class UserPost(CreateView):
+class UserPost(SuccessMessageMixin, CreateView):
 
     template_name = 'post_form.html'
     success_url = '/'
+    success_message = """ Your post has been submitted successfully!
+                        We'll review it and post it soon.
+                        In the meantime, why not going for another
+                        dive on our blog? """
 
     model = Post
     fields = ['image', 'title', 'slug', 'content']
