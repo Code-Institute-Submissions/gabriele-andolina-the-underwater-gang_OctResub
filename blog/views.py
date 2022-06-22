@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect, HttpResponse
@@ -82,6 +82,14 @@ class PostLike(View):
 class UserPost(CreateView):
 
     template_name = 'post_form.html'
+    success_url = '/'
 
     model = Post
     fields = ['image', 'title', 'slug', 'content']
+
+    # The slug field doesn't get prepopulated. Why?
+    prepopulated_fields = {'slug': ('title',)}
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
