@@ -86,8 +86,11 @@
                     <div class="row">
                         <div class="col">
                             {% if user.is_authenticated %}
-                            <div class="offset-md-5">
+                            <div>
                                 <a href="{% url 'post_update' post.slug %}" class="btn btn-light comment-btn mt-4">Update this post</a>
+                            </div>
+                            <div>
+                                <a href="{% url 'post_delete' post.slug %}" class="btn btn-outline-danger mt-4">Delete this post</a>
                             </div>
                             {% endif %}
                         </div>
