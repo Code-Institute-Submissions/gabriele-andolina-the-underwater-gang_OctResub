@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import sys
 from django.contrib.messages import constants as messages
 
 if os.path.isfile("env.py"):
@@ -37,7 +36,6 @@ ALLOWED_HOSTS = ["the-underwater-gang.herokuapp.com", "localhost"]
 
 # Application definition
 
-sys.modules['fontawesome_free'] = __import__('fontawesome-free')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
