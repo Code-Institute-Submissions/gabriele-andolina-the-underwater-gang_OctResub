@@ -4,9 +4,11 @@ from django.shortcuts import (
                             reverse,
                             )
 from django.views import generic, View
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+# from django.template.defaultfilters import slugify
 from .models import Post
 from .forms import CommentForm
 
@@ -84,7 +86,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_content', args=[slug]))
 
 
-class UserPost(SuccessMessageMixin, CreateView):
+class UserPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     template_name = 'post_form.html'
     success_url = '/'
@@ -94,11 +96,30 @@ class UserPost(SuccessMessageMixin, CreateView):
                         dive on our blog? """
 
     model = Post
-    fields = ['image', 'title', 'slug', 'content']
+    fields = ['image', 'title', 'content']
 
-    # The slug field doesn't get prepopulated. Why?
-    prepopulated_fields = {'slug': ('title',)}
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class UpdatePost(LoginRequiredMixin, SuccessMessageMixin,
+                 UserPassesTestMixin, UpdateView):
+
+    template_name = 'post_form.html'
+    success_url = '/'
+    success_message = "Your post has been updated successfully!"
+
+    model = Post
+    fields = ['image', 'title', 'content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
