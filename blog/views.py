@@ -8,7 +8,6 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-# from django.template.defaultfilters import slugify
 from .models import Post
 from .forms import CommentForm
 
@@ -118,8 +117,10 @@ class UpdatePost(LoginRequiredMixin, SuccessMessageMixin,
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:
             return True
         return False
+
