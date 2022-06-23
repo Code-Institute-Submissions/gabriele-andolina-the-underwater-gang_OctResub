@@ -4,7 +4,7 @@ from django.shortcuts import (
                             reverse,
                             )
 from django.views import generic, View
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -124,3 +124,17 @@ class UpdatePost(LoginRequiredMixin, SuccessMessageMixin,
             return True
         return False
 
+
+class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+
+    template_name = 'post_confirm_delete.html'
+    success_url = '/'
+    success_message = "Your post has been deleted successfully!"
+
+    model = Post
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
