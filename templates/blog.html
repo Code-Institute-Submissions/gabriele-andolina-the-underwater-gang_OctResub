@@ -6,12 +6,9 @@
     <div class="row">
 
         {% if user.is_authenticated %}
-        <div class="col mt-4">
+        <div class="col-8 offset-2 mt-4">
             <a href="{% url 'post_create' %}" class="btn btn-light btn-lg btn-block write-post-btn">Write a post</a>
         </div>
-        <!-- <div class="col mt-4">
-            <a href="#" class="btn btn-light btn-lg btn-block write-post-btn">Update a post</a>
-        </div> -->
         {% endif %}
 
         <div class="col-12 mt-4">
