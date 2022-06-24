@@ -38,10 +38,23 @@ ul li {
     background-color: #00B4D8 !important;
 }
 
-/******************** Hero Image ********************/
+/******************** Landing Page - Hero Image & Welcome Message ********************/
 
 .hero-img {
     width: 40vw;
+}
+
+.welcome-msg {
+    text-align: center;
+}
+
+.home-title {
+    font-family: "Permanent Marker", "Times New Roman", sans-serif;
+}
+
+.welcome-secondary {
+    font-style: italic;
+    font-size: 20px;
 }
 
 /******************** Footer ********************/
