@@ -38,6 +38,12 @@ ul li {
     background-color: #00B4D8 !important;
 }
 
+/******************** Hero Image ********************/
+
+.hero-img {
+    width: 40vw;
+}
+
 /******************** Footer ********************/
 
 #footer {

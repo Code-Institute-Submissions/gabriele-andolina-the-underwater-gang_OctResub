@@ -23,6 +23,7 @@ class PostList(generic.ListView):
 def HomeView(request):
     return render(request, 'index.html')
 
+
 class PostContent(View):
 
     def get(self, request, slug, *args, **kwargs):
