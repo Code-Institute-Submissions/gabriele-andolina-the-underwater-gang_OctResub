@@ -27,7 +27,7 @@ body {
 .nav-item a {
     font-family: "Exo 2", "Times New Roman", sans-serif;
     font-weight: 400;
-    color: white;
+    color: white !important;
 }
 
 ul li {
@@ -36,6 +36,10 @@ ul li {
 
 .navbar {
     background-color: #00B4D8 !important;
+}
+
+.active {
+    text-decoration: underline;
 }
 
 /******************** Landing Page - Hero Image & Welcome Message ********************/
