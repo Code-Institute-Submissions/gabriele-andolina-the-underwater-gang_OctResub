@@ -78,7 +78,7 @@ class PostContent(View):
 
 class PostLike(View):
 
-    def post(self, request, slug, *arg, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
 
         if post.likes.filter(username=request.user.username).exists():
@@ -99,9 +99,6 @@ class UserPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
                         In the meantime, why not going for another
                         dive on our blog? """
 
-    # fields = ['image', 'title', 'content']
-    # summernote_fields = ('content')
-
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
@@ -116,12 +113,10 @@ class UpdatePost(LoginRequiredMixin, SuccessMessageMixin,
 
     model = Post
     form_class = PostForm
-    # fields = ['image', 'title', 'content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-
 
     def test_func(self):
         post = self.get_object()
