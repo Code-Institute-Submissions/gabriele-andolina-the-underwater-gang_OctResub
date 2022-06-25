@@ -1,4 +1,4 @@
-{% load static %}
+<!-- {% load static %} -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,15 +15,13 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <!--------------- Navbar --------------->
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top sticky-top">
-
         <a id="logo" href="#">The Underwater Gang</a>
-
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse-target">
              <span class="navbar-toggler-icon"></span>
         </button>
-        
         <div class="collapse navbar-collapse offset-5" id="collapse-target">
             <ul class="navbar-nav">
                 {% url 'home' as url %}
@@ -57,10 +55,9 @@
                 {% endif %}
             </ul>
         </div>
-
     </nav>
     
-    <!--------------- Messages --------------->
+    <!-- Messages -->
     <div class="container">
         <div class="row">
             <div class="col">
@@ -75,15 +72,14 @@
         </div>
     </div>
 
-
-    <!--------------- Main content --------------->
+    <!-- Main content -->
     <main class="container-fluid">
         {% block content %}
         <!-- Page content here -->
         {% endblock content %}
     </main>
 
-    <!--------------- Footer --------------->
+    <!-- Footer -->
     <footer id="footer" class="text-center fixed-bottom">
         <div class="container">
             <div class="row footer-info d-flex align-items-center">
@@ -102,9 +98,10 @@
         }, 7000);
     </script>
     
-<script src="https://kit.fontawesome.com/af75475c99.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/af75475c99.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>

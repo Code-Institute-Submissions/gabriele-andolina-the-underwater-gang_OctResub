@@ -13,20 +13,27 @@ from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
-
+    """
+    Creates a view to display all posts on main blog page.
+    """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'blog.html'
     paginate_by = 4
 
 
-def HomeView(request):
+def home_view(request):
+    """
+    Sets the homepage template to render.
+    """
     return render(request, 'index.html')
 
 
 class PostContent(View):
-
-    def get(self, request, slug, *args, **kwargs):
+    """
+    Creates a view to display the content for each post.
+    """
+    def get(self, request, slug):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
@@ -46,7 +53,7 @@ class PostContent(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, slug):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
@@ -77,8 +84,10 @@ class PostContent(View):
 
 
 class PostLike(View):
-
-    def post(self, request, slug, *args, **kwargs):
+    """
+    Creates a view to like posts.
+    """
+    def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
         if post.likes.filter(username=request.user.username).exists():
@@ -90,6 +99,9 @@ class PostLike(View):
 
 
 class UserPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    """
+    Creates a view to allow users to Create a post.
+    """
     model = Post
     form_class = PostForm
     template_name = 'post_form.html'
@@ -106,7 +118,9 @@ class UserPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class UpdatePost(LoginRequiredMixin, SuccessMessageMixin,
                  UserPassesTestMixin, UpdateView):
-
+    """
+    Creates a view to allow users to Update a post.
+    """
     template_name = 'post_form.html'
     success_url = '/'
     success_message = "Your post has been updated successfully!"
@@ -126,7 +140,9 @@ class UpdatePost(LoginRequiredMixin, SuccessMessageMixin,
 
 
 class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-
+    """
+    Creates a view to allow users to Delete a post.
+    """
     template_name = 'post_confirm_delete.html'
     success_url = '/'
     success_message = "Your post has been deleted successfully!"

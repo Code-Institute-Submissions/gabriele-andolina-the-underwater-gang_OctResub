@@ -4,13 +4,11 @@
 
 <div class="container-fluid">
     <div class="row">
-
         {% if user.is_authenticated %}
         <div class="col-8 offset-2 mt-4">
             <a href="{% url 'post_create' %}" class="btn btn-light btn-lg btn-block write-post-btn">Write a post</a>
         </div>
         {% endif %}
-
         <div class="col-12 mt-4">
             <div class="row justify-content-center">
             {% for post in post_list %}
@@ -34,7 +32,6 @@
                             </a>
                             <hr>
                             <p class="card-text text-muted h6">{{ post.created_on }}</p>
-
                         </div>
                     </div>
                 </div>
@@ -42,12 +39,10 @@
             </div>
             <div class="row justify-content-center">
                 {% endif %}
-
                 {% endfor %}
             </div>
         </div>
     </div>
-
     {% if is_paginated %}
     <div class="pagination justify-content-center">
         <span class="step-links">
@@ -55,11 +50,9 @@
                 <a href="?page=1" class="btn btn-outline-info mx-1 mb-1">&laquo; First</a>
                 <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info mx-1 mb-1">Previous</a>
             {% endif %}
-
             <span class="current mx-2">
                 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
             </span>
-
             {% if page_obj.has_next %}
                 <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-info mx-1 mb-1">Next</a>
                 <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-info mx-1 mb-1">Last &raquo;</a>
@@ -68,6 +61,5 @@
         {% endif %}
     </div>
 </div>
-
 
 {% endblock %}
