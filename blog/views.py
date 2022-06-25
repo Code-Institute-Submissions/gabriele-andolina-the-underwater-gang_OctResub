@@ -9,7 +9,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
@@ -90,7 +90,8 @@ class PostLike(View):
 
 
 class UserPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-
+    model = Post
+    form_class = PostForm
     template_name = 'post_form.html'
     success_url = '/'
     success_message = """ Your post has been submitted successfully!
@@ -98,9 +99,8 @@ class UserPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
                         In the meantime, why not going for another
                         dive on our blog? """
 
-    model = Post
-    fields = ['image', 'title', 'content']
-
+    # fields = ['image', 'title', 'content']
+    # summernote_fields = ('content')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -115,7 +115,8 @@ class UpdatePost(LoginRequiredMixin, SuccessMessageMixin,
     success_message = "Your post has been updated successfully!"
 
     model = Post
-    fields = ['image', 'title', 'content']
+    form_class = PostForm
+    # fields = ['image', 'title', 'content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
