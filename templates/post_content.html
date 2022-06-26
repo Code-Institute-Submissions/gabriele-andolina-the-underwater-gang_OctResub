@@ -31,9 +31,9 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa fa-solid fa-heart"></i></button>
+                                <button role="button" type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa fa-solid fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa fa-regular fa-heart"></i></button>
+                                <button role="button" type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa fa-regular fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
@@ -59,7 +59,7 @@
                                 <form method="post">
                                     {{ comment_form | crispy }}
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-light comment-btn">Submit</button>
+                                    <button role="button" type="submit" class="btn btn-light comment-btn">Submit</button>
                                 </form>
                                 {% endif %}
                             </div>

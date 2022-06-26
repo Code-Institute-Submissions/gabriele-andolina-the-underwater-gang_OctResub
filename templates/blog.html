@@ -6,7 +6,7 @@
     <div class="row">
         {% if user.is_authenticated %}
         <div class="col-8 offset-2 mt-4">
-            <a href="{% url 'post_create' %}" class="btn btn-light btn-lg btn-block write-post-btn">Write a post</a>
+            <a href="{% url 'post_create' %}" class="btn btn-light btn-lg btn-block write-post-btn" aria-label="write-post-link">Write a post</a>
         </div>
         {% endif %}
         <div class="col-12 mt-4">
@@ -19,7 +19,7 @@
                                 {% if "placeholder" in post.image.url %}
                                 <img class="card-img-top" 
                                     src="https://res.cloudinary.com/dazl3vfnm/image/upload/v1655218629/The%20Underwater%20Gang%20-%20PP4/first-post_vlo4lg.jpg" 
-                                    alt="">
+                                    alt="Post main image">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.image.url }}" alt="">
                                 {% endif %}
@@ -47,15 +47,15 @@
     <div class="pagination justify-content-center">
         <span class="step-links">
             {% if page_obj.has_previous %}
-                <a href="?page=1" class="btn btn-outline-info mx-1 mb-1">&laquo; First</a>
-                <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info mx-1 mb-1">Previous</a>
+                <a href="?page=1" class="btn btn-outline-info mx-1 mb-1" aria-label="first-page">&laquo; First</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info mx-1 mb-1" aria-label="previous-page">Previous</a>
             {% endif %}
             <span class="current mx-2">
                 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
             </span>
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-info mx-1 mb-1">Next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-info mx-1 mb-1">Last &raquo;</a>
+                <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-info mx-1 mb-1" aria-label="next-page">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-info mx-1 mb-1" aria-label="last-page">Last &raquo;</a>
             {% endif %}
         </span>
         {% endif %}
