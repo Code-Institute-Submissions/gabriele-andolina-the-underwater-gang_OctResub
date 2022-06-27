@@ -21,9 +21,9 @@ New divers are the first category of website users. Having recently discovered t
 The second category of users is made up of experienced divers looking for a platform of like-minded people; they desire to share what they have learnt over the years, as well as to hear from other long-time practitioners such as diving instructors or divemasters, i.e. underwater tour guides.
 Both types of users can find a place not only to read from, but also to contribute to with their own posts.
 
-## **3. User Stories & Agile Development**
+## **3. Wireframes, User Stories & Agile Development**
 
-A detailed report regarding user stories and agile development can be found here: [User Stories & Agile Development](documentation/Agile.md).
+A detailed report regarding user stories and agile development can be found here: [Wireframes, User Stories & Agile Development](documentation/Agile.md).
 
 ## **4. Features**
 ### 4.1 *Existing features*

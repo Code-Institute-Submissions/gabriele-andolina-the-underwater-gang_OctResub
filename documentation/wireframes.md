@@ -2,7 +2,7 @@
 
 ## **An Introductory Note**  
   
-As discussed in the README.md document, I had to scale down the project during its development. In an effort to adopt an Agile mindset, I focused on delivering a MVP in the form of a properly functioning blog while leaving the individual *About Us* page and the logbook app to a future release. <br>
+I had to scale down the project during its development. In an effort to adopt an Agile mindset, I focused on delivering a MVP in the form of a properly functioning blog while leaving the individual *About Us* page and the logbook app to a future release. <br>
 This document includes all the original wireframes, with an indication of those now belonging to a future release.
 
 ### **1. Site Map**

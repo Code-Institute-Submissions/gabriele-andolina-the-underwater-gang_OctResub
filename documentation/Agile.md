@@ -1,8 +1,11 @@
 # **User Stories & Agile Development**
 
-## **1. User Stories - Description and Testing**
+## **1. Wireframes**
 
-### **1.1 User Stories - Description** 
+The detailed wireframes for this project can be found here: [Wireframes](/documentation/wireframes.md).
+
+## **2. User Stories - Description and Testing**
+### **2.1 User Stories - Description** 
 
 In crafting the user stories for The Underwater Gang, I made use of the MoSCoW technique.
 
@@ -32,9 +35,9 @@ No. | User Story
 20  | As a registered user, I can add other divers as friends so I can keep in touch with them and their ongoing diving adventures.
 21  | As a registered user, I can log a dive shared with another user so I can keep track of shared underwater adventures.
 
-### **1.2 Testing User Stories** 
+### **2.2 Testing User Stories** 
 
-#### **1.2.1 Successful User Stories**
+#### **2.2.1 Successful User Stories**
 No. | User Story | Result
 --- | ---------- | ------
 1   | As an admin, I want to present a clear landing page so that users can quickly understand the site's goals and feel drawn to become a member. | Pass
@@ -50,7 +53,7 @@ No. | User Story | Result
 13  | As an admin, I can approve comments so that inappropriate and/or offensive content can be left out of the community. | Pass
 14  | As an admin, I can manage all blog posts so that the community may be a place which offers true value and correct information to all its users. | Pass
 
-#### **1.2.2 User Stories for Future Release**
+#### **2.2.2 User Stories for Future Release**
 In this section I will focus on the user stories that did not make it to the first release of the project, explaining the reason for each one.
 
 No. | User Story  | Result
@@ -65,18 +68,19 @@ No. | User Story  | Result
 20  | As a registered user, I can add other divers as friends so I can keep in touch with them and their ongoing diving adventures. <br> Originally planned as a future-release feature.  | N/A
 21  | As a registered user, I can log a dive shared with another user so I can keep track of shared underwater adventures. <br> Originally planned as a future-release feature.  | N/A
 <br>
-## **2. Agile Development**
+
+## **3. Agile Development**
 
 The tool I chose to keep track of my work is Asana, due to its popularity and my willingness to acquaint myself with a known platform for Agile development.
 On Asana, I created my user stories according to the MoSCoW technique, assigning them a specific color according to their status in order to have a visual aid through the process.
 
-### **2.1 The project's kanban board at the final stage of development**
+### **3.1 The project's kanban board at the final stage of development**
 
 ![Kanban board - 1](/documentation/images/project-board-1.png)
 ![Kanban board - 2](/documentation/images/project-board-2.png)
 ![Kanban board - 3](/documentation/images/project-board-3.png)
 
-### **2.2 Things to note/improve:**
+### **3.2 Things to note/improve:**
 - *Poor planning:* as I started working on my project, I realised my planning had been insufficient in terms of the specificity necessary to each user story. This resulted, for instance, in subsequent updates to some user stories, as well as in a back-and-forth process between the *In progress* and *Done* sections of the board at various stages.
 - *Lack of user story points:* Due to me learning both a new framework and a new methodology (Agile) I found it impossible to give an estimate of the points for each user story. For this reason, I relied solely on the MoSCoW paradigm. 
 
