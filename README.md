@@ -10,25 +10,25 @@ The Underwater Gang is the website for a community of scuba divers, currently of
 
 ## **2. General User Goals** 
 
-### **2.1 Site Owner's Goals**
+### **2.1 Site Owners' Goals**
 The goal of the three owners is to see their website become the trusted companion for a thriving community of scuba divers.  
-They want to offer a platform where ideas, tips, safety advice, personal experiences and stories can be shared by all divers, experienced or not. To do so, they offer a blog where registered users can write posts. For the community to receivetrue value and reliable information, all posts must be approved before being published. This will make sure that the site owners -- who are experienced divers themselves -- can filter out incorrect and potentially harmful information.
+They want to offer a platform where ideas, tips, safety advice, personal experiences and stories can be shared by all divers, experienced or not. To do so, they offer a blog where registered users can write posts. For the community to receive true value and reliable information, all posts must be approved before being published. This will make sure that the site owners - who are experienced divers themselves - can filter out incorrect and potentially harmful information.
 
-### **2.2. User Goals (UX)**
+### **2.2. User Goals**
 * New divers:
-New divers are the first category of website users. Having recently discovered this amazing sport, they naturally want to expand their knowledge of it and come to the website as they search for resources online. 
+New divers are the first category of website users. Having recently discovered this amazing sport, they naturally want to expand their knowledge of it; they come to the website as they search for resources online. 
 * Pro divers:
-The second category of users is made up of experienced divers looking for a platform of like-minded people;they desire to share what they have learnt over the years, as well as to hear from other long-time practitioners such as diving instructors or divemasters, i.e. underwater tour guides.
+The second category of users is made up of experienced divers looking for a platform of like-minded people; they desire to share what they have learnt over the years, as well as to hear from other long-time practitioners such as diving instructors or divemasters, i.e. underwater tour guides.
 Both types of users can find a place not only to read from, but also to contribute to with their own posts.
 
-## **3. User Stories, Manual Testing & Agile Development**
+## **3. User Stories & Agile Development**
 
-A detailed report regarding user stories, manual testing and agile development can be found here: [Agile](Agile.md)
+A detailed report regarding user stories and agile development can be found here: [User Stories & Agile Development](documentation/Agile.md).
 
 ## **4. Features**
 ### 4.1 *Existing features*
 
-This section will provide an overview of the website. Where available, two different screenshots of each page/section will be provided, in order to show the difference in outlook depending on the signed-in/not sign-in status of the user.
+This section will provide an overview of the website. Where available, two different screenshots of each page/section will be provided, in order to show the difference in outlook depending on the signed-in/not signed-in status of the user.
 
 * Homepage
 
@@ -98,7 +98,7 @@ The sign up page for new users.
 * Sign out page
 
 ![Sign out page](documentation/images/sign-out.png)
-The sign out page for new users.
+The sign out page for logged in users.
 
 
 ### 4.2 *Features left to implement*
@@ -106,11 +106,14 @@ The sign out page for new users.
    * An important addition to the website will be the creation of a logbook for divers to log new dives and browse old ones.
 * *Diver's friendbook*
    * The goal of the website is to create a community, not only to provide a blog platform. For this reason, in the future divers will be able to add friends on their profile, thus creating meaningful human connections that hopefully extend into the real world (and sea).
+* *Standard-sized image*
+   * The images at the top of each blog post currently vary in size. A future version of the project will provide standardised measurements to improve the aesthetic balance.
 
 ## **5. Validation and Performance**
 ### 5.1 *Validator Testing*
 * HTML
-   * The final version of the code is free of errors when passed through the official W3C Markup Validator via URI. However, a difference was noted upon checking the .html files individually as opposed to validation via URI. Since this is a Django-based project, the source code had to be retrieved by right-clicking on each page in the front-end, then selecting the "View page source" option. In fact, the markup validation service is not able to recognize the Jinja templating language.
+   * The final version of the code is free of errors when passed through the official W3C Markup Validator via URI.  
+   However, a difference was noted upon checking the .html files individually as opposed to validation via URI. Since this is a Django-based project, the source code had to be retrieved by right-clicking on each page in the front-end, then selecting the "View page source" option. In fact, the markup validation service is not able to recognize the Jinja templating language.
 
    ![W3C HTML Validation](documentation/images/html-validation.png)
 
@@ -127,7 +130,7 @@ The site is fully responsive.
 Manual testing has been performed on the following three devices:  
 - MacBook Pro (Retina, 13 inch, Late 2013);
 - iPad Pro (12.9 inch, Third Generation);
-- Xiaomi Redmi 5 (5.7 inch)
+- Xiaomi Redmi 5 (5.7 inch).
 
 ### 5.3 *Lighthouse Report*
 
@@ -145,14 +148,20 @@ As observable in the report screenshot, mobile performance is lower on mobile th
 
 A first Lighthouse report returned a score of 79/100 for accessibility, due to several missing aria-label attributes on buttons and links. After implementing the due corrections, the final score is 97/100.
 
-### 5.4 *Internal and external links*
+### 5.4 *Internal links*
 
 Every link on the website is fully functioning.
 
-## **6.Deployment**
+## **6. Testing and Bugs**
 
+The manual tests run on the project can be found here: [Testing](documentation/testing.md).  
+User stories tests can be found here: [User Stories & Agile Development](documentation/Agile.md).  
 
-## **7. Technologies Used**
+## **7. Deployment**
+
+The detailed procedure for deployment can be found here: [Deployment](documentation/deployment.md).
+
+## **8. Technologies Used**
 * Languages and Frameworks
    * **HTML5**
    * **CSS3**
@@ -161,24 +170,24 @@ Every link on the website is fully functioning.
    * **Bootstrap**
 
 * Websites and Softwares
-   * **Balsamiq**: used to create the website's wireframes (located in the 'documentation' folder)
+   * **Balsamiq**: used to create the website's wireframes (see the 'documentation/wireframes' folder)
    * **Font Awesome**: FA's icons were used to create the social media links found in the website's footer.
    * **Git**: Git was used for version control through the Gitpod terminal, to add, commit and push the project's updates to GitHub.
-   * **GitHub**: GitHub, together with GitHub Pages, has been used to store the project's repository and deploy the website.
-   * **Google Fonts**: Google Fonts has been used to import the two fonts in use on the website, namely the "Great Vibes" and "Montserrat" ones.
-   * **ColorSpace and ColorHunt**: The color palette used in the project has been created on these websites.
+   * **GitHub**: GitHub was used to store the project's repository.
+   * **Heroku**: Heroku was used to host the deployed project.
+   * **Google Fonts**: Google Fonts was used to import the two fonts in use on the website, namely the "Permanent Marker" and "Exo 2" ones.
+   * **ColorSpace and ColorHunt**: The color palette used in the project was created on these websites.
    * **Asana**: Used for creating and storing user stories, and to keep track of the development process.
-   * **Pexels**: For the post images.
+   * **Pexels**: For post images.
    * **Icons8**: For the homepage drawing.
 
-## **8. Credits**
-
-### 8.1 *Credits*
-All code was written by me personally. However, during the development process I relied considerably on the Code Institute *I Think Therefore I Blog* and Corey Schafer's Django tutorials. 
-### 8.2 *Content*
+## **9. Credits**
+### 9.1 *Credits*
+All code was written by me personally. However, during the development process I relied considerably on the Code Institute *I Think Therefore I Blog* walkthrough project and Corey Schafer's Django tutorials. 
+### 9.2 *Content*
 The entirety of the content found on the website has been created by me personally. I drew from my personal experiences as a new scuba diver to create the text found in the two posts by the website creators, while creating other content for the remaining posts.
-### 8.3 *Media*
-All the images displayed on the website have been downloaded from Unsplash.com and Pexels.com. Here follows the list of the photographers whose work has made this project possible:
+### 9.3 *Media*
+All the images displayed on the website were downloaded from Unsplash.com and Pexels.com. Here follows the list of the photographers whose work has made this project possible:
    * *Welcome to our blog!* photo by Pixabay 
    * *Exploring Uncharted Waters* photo by Pia
    * *Recoinnassance Dives* photo by Aviv Perets  
@@ -187,7 +196,7 @@ All the images displayed on the website have been downloaded from Unsplash.com a
 
 The drawing on the homepage was downloaded from Icons 8.
 
-## **9. Acknowledgments**
+## **10. Acknowledgments**
 
 This project would have been impossible without the help of some incredible people, whom I wish to thank here.
 - A special thank you goes to my mentor, Mr Richard Wells, for continuous guidance, suggestions and much needed encouragement. Thank you also for pushing me to do more, to go beyond my limits. It is a lesson I am still in the process of learning.
