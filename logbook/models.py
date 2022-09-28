@@ -8,18 +8,19 @@ class Dive(models.Model):
     """
     Creates a Dive model for database use.
     """
-    title = models.ForeignKey(User, on_delete=models.CASCADE, related_name='dive_name')
-    slug = models.SlugField(max_length=200, unique=True)
+    diver = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200, unique=True, blank=False)
+    slug = models.SlugField(max_length=200, unique=True, blank=False)
     date = models.DateField(auto_now=False, auto_now_add=False)
-    location = models.CharField(max_length=255)
-    diving_site = models.CharField(max_length=255)
-    duration = models.CharField(max_length=255)
-    depth = models.CharField(max_length=255)
-    gas_mixture = models.CharField(max_length=255)
-    air_in = models.CharField(max_length=255)
-    air_out = models.CharField(max_length=255)
-    visibility = models.CharField(max_length=255)
-    description = models.TextField()
+    location = models.CharField(max_length=255, blank=False)
+    diving_site = models.CharField(max_length=255, blank=False)
+    duration = models.CharField(max_length=255, blank=True)
+    depth = models.CharField(max_length=255, blank=True)
+    gas_mixture = models.CharField(max_length=255, blank=True)
+    air_in = models.CharField(max_length=255, blank=True)
+    air_out = models.CharField(max_length=255, blank=True)
+    visibility = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
 
     class Meta:
         ordering = ['-date']
