@@ -38,6 +38,15 @@
                     <a class="nav-link" href="{% url 'post_create' %}" aria-label="write-post-link">Write a post</a>
                 </li>
                 {% endif %}
+                {% url 'logbook' as url %}
+                <li class="nav-item {% if request.path == url %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'logbook' %}" aria-label="logbook-link">Logbook</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item {% if request.path == url %}active{% endif %}">
+                    <a class="nav-link" href="" aria-label="logout-link">Log a dive</a>
+                </li>
+                {% endif %}
                 {% url 'account_logout' as url %}
                 {% if user.is_authenticated %}
                 <li class="nav-item {% if request.path == url %}active{% endif %}">
