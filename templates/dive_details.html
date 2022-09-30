@@ -1,5 +1,34 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
-I'm all wired up!
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <div class="card mt-4 mb-4">
+                <div class="card-title text-center mt-4">
+                    <h2><strong>{{ dive.title }}</strong></h2>
+                    <p><em>{{ dive.date }}</em></p>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <p><em><strong>Location:</strong></em> {{ dive.location }}</p>
+                        <p><em><strong>Diving Site:</strong></em> {{ dive.diving_site }}</p>
+                        <p><em><strong>Duration (minutes):</strong></em> {{ dive.duration }}</p>
+                        <p><em><strong>Depth (meters/feet):</strong></em> {{ dive.depth }}</p>
+                        <p><em><strong>Gas Mixture:</strong></em> {{ dive.gas_mixture }}</p>
+                        <p><em><strong>Air In (bar):</strong></em> {{ dive.air_in }}</p>
+                        <p><em><strong>Air Out (bar):</strong></em> {{ dive.air_out }}</p>
+                        <p><em><strong>Description:</strong></em></p>
+                        <p class="card-text justify-content">
+                            {{ dive.description | safe }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
