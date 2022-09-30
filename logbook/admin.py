@@ -5,6 +5,8 @@ from .models import Dive
 @admin.register(Dive)
 class DiveAdmin(SummernoteModelAdmin):
 
+    list_display = ('diver', 'date', 'title')
+    list_filter = ('diver', 'date')
+    search_fields = ('diver', 'title')
     prepopulated_fields = {'slug': ('title',)}
-    list_display = ('date', 'location', 'title')
     summernote_fields = ('description')

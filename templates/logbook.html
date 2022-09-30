@@ -3,36 +3,55 @@
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row logbook-prompt">
-        {% if user.is_authenticated %}
+    {% if user.is_authenticated %}
+    <div class="row">
         <div class="col-12 mt-4">
-            <a href="" class="btn btn-light btn-lg btn-block write-post-btn" aria-label="write-post-link">Log a dive</a>
+            <a href="" class="btn btn-light btn-lg btn-block log-dive-btn" aria-label="write-post-link">Log a dive</a>
         </div>
         <div class="col-12 mt-4 text-center">
             <div class="row justify-content-center">
-            Hey there, I'm all wired up. Now customise me!
+                {% for dive in dive_list %}
+                    {% if user.id == dive.diver.id %}
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="card dive-card">
+                                <a href="#">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><strong>{{ dive.title }}</strong></h5>
+                                        <p class="card-text">
+                                        {{ dive.date }} - <em>{{ dive.location }}</em>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
-        {% elif not user.is_authenticated %}
-        <div class="col-12 text-center">
-            <div>
-                <p>
-                Sorry, the logbook is only available  to registered divers! <br>
-                To access it, please sign-up here: <br>
-                <button class="btn sign-up-btn mt-2">
-                    <a href="{% url 'account_signup' %}" aria-label="signup-link">Sign up</a>
-                </button> <br>
-                </p> 
-                <p>
-                If you already have an account, please sign in here: <br>
-                <button class="btn sign-in-btn mt-2">
-                    <a href="{% url 'account_login' %}" aria-label="signin-link">Sign in</a>
-                </button>
-                </p>
+    </div>    
+    {% elif not user.is_authenticated %}
+        <div class="row logbook-prompt">
+            <div class="col-12 text-center">
+                <div>
+                    <p>
+                    Sorry, the logbook is only available  to registered divers! <br>
+                    To access it, please sign-up here: <br>
+                    <button class="btn sign-up-btn mt-2">
+                        <a href="{% url 'account_signup' %}" aria-label="signup-link">Sign up</a>
+                    </button> <br>
+                    </p> 
+                    <p>
+                    If you already have an account, please sign in here: <br>
+                    <button class="btn sign-in-btn mt-2">
+                        <a href="{% url 'account_login' %}" aria-label="signin-link">Sign in</a>
+                    </button>
+                    </p>
+                </div>
             </div>
         </div>
-        {% endif %}
-    </div>
+    {% endif %}
 </div>
 
 {% endblock %}
