@@ -143,19 +143,26 @@ footer a {
 
 /******************** Buttons ********************/
 
-.sign-in-btn, .sign-up-btn, .comment-btn, .write-post-btn, .log-dive-btn {
+.sign-in-btn, .sign-up-btn, .comment-btn {
     border: solid 2px white !important;
     background-color: #00B4D8;
     color: white;
     width: 50vw;
-    position: relative;
-    left: 25%;
 }
 
 .sign-in-btn:hover, .sign-up-btn:hover, .comment-btn:hover, .write-post-btn:hover, .log-dive-btn:hover {
     border: solid 2px #00B4D8 !important;
     background-color: white;
     color: #00B4D8;
+}
+
+.write-post-btn, .log-dive-btn {
+    border: solid 2px white !important;
+    background-color: #00B4D8;
+    color: white;
+    width: 50vw;
+    position: relative;
+    left: 25%;
 }
 
 /******************** Comments Section ********************/
@@ -194,4 +201,8 @@ footer a {
 .dive-card {
     width: 40vw;
     border: 1px solid #00B4D8;
+}
+
+.turtle-img {
+    width: 12%;
 }
