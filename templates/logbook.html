@@ -6,7 +6,7 @@
     {% if user.is_authenticated %}
     <div class="row">
         <div class="col-12 mt-4">
-            <a href="" class="btn btn-light btn-lg btn-block log-dive-btn" aria-label="write-post-link">Log a dive</a>
+            <a href="{% url 'log_dive' %}" class="btn btn-light btn-lg btn-block log-dive-btn" aria-label="write-post-link">Log a dive</a>
         </div>
         <div class="col-12 mt-4 text-center">
             <div class="row justify-content-center">

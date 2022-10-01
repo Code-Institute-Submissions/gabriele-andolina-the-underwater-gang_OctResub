@@ -44,7 +44,7 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="" aria-label="logout-link">Log a dive</a>
+                    <a class="nav-link" href="{% url 'log_dive' %}" aria-label="logout-link">Log a dive</a>
                 </li>
                 {% endif %}
                 {% url 'account_logout' as url %}
