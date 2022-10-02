@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic.edit import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Dive
 from .forms import DiveForm
 
@@ -14,7 +15,7 @@ class DiveList(generic.ListView):
     template_name = 'logbook.html'
 
 
-class DiveDetails(View):
+class DiveDetails(LoginRequiredMixin, View):
     """
     A view to show the full details for each logged dive.
     """
@@ -31,7 +32,7 @@ class DiveDetails(View):
         )
 
 
-class LogDive(CreateView):
+class LogDive(LoginRequiredMixin, CreateView):
     """
     A view to allow users to log a dive in their logbook.
     """
