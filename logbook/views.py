@@ -42,5 +42,5 @@ class LogDive(CreateView):
     success_message = "Whale done! Your dive has been logged correctly."
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.diver = self.request.user
         return super().form_valid(form)

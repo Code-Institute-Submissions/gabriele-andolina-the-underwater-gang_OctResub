@@ -5,11 +5,11 @@
 {% block content%}
 
 <div class="container">
-    <div class="row ">
-        <div class="col mt-4">
-            <div class="mt-2 card">
+    <div class="row">
+        <div class="col-10 offset-1 mt-4">
+            <div class="card mt-2 mb-4 border-dark text-center">
                 <div class="card-body mb-5">
-                    <h2 >My New Dive</h2>
+                    <h2 class="text-center">My New Dive</h2>
                     <form method="post" enctype="multipart/form-data">
                         {{ form | crispy }}
                         {% csrf_token %}

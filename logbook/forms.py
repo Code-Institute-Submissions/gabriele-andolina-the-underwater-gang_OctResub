@@ -14,5 +14,5 @@ class DiveForm(forms.ModelForm):
                   'duration', 'depth', 'gas_mixture', 'air_in',
                   'air_out', 'visibility', 'description')
         widgets = {
-            'content': SummernoteWidget(),
+            'description': SummernoteWidget(),
         }
