@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Dive
 from .forms import DiveForm
 
@@ -32,7 +33,7 @@ class DiveDetails(LoginRequiredMixin, View):
         )
 
 
-class LogDive(LoginRequiredMixin, CreateView):
+class LogDive(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
     A view to allow users to log a dive in their logbook.
     """
