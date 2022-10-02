@@ -214,3 +214,15 @@ footer a {
 .msg-column {
     width: 50vw;
 }
+
+.update-btn {
+    width: 20%;
+    position: relative;
+    left: 10%;
+}
+
+.delete-btn {
+    width: 20%;
+    position: relative;
+    left: 2%;
+}
