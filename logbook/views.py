@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from django.views.generic.edit import CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Dive
 from .forms import DiveForm
@@ -46,3 +46,26 @@ class LogDive(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         form.instance.diver = self.request.user
         return super().form_valid(form)
+
+
+class UpdateDive(LoginRequiredMixin, SuccessMessageMixin,
+                 UserPassesTestMixin, UpdateView):
+    """
+    A view to allow users to update a logged dive in their logbook.
+    """
+    template_name = 'dive_form.html'
+    success_url = '/'
+    success_message = "Krilliant! Your dive log has been updated successfully."
+
+    model = Dive
+    form_class = DiveForm
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        dive = self.get_object()
+        if self.request.user == dive.diver:
+            return True
+        return False
