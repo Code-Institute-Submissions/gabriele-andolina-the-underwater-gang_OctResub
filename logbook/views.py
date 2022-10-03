@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Dive
@@ -63,6 +63,23 @@ class UpdateDive(LoginRequiredMixin, SuccessMessageMixin,
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+    def test_func(self):
+        dive = self.get_object()
+        if self.request.user == dive.diver:
+            return True
+        return False
+
+
+class DeleteDive(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    A view to allow users to delete a logged dive from their logbook.
+    """
+    template_name = 'dive_confirm_delete.html'
+    success_url = '/'
+    success_message = "Your dive has been deleted successfully!"
+
+    model = Dive
 
     def test_func(self):
         dive = self.get_object()
