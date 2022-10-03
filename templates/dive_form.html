@@ -9,7 +9,11 @@
         <div class="col-10 offset-1 mt-4">
             <div class="card mt-2 mb-4 border-dark text-center">
                 <div class="card-body mb-5">
+                    {% if dive.title %}
+                    <h2 class="text-center">{{ dive.title }}</h2>
+                    {% else %}
                     <h2 class="text-center">My New Dive</h2>
+                    {% endif %}
                     <form method="post" enctype="multipart/form-data">
                         {{ form | crispy }}
                         {% csrf_token %}
