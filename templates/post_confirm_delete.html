@@ -8,7 +8,7 @@
 
             <div class="mt-2 card">
                 <div class="card-body mb-5 post-form">
-                    <h2 >My New Post</h2>
+                    <h2 >{{ post.title }}</h2>
                     <form method="post">
                         {% csrf_token %}
                         <h2>Are you sure you want to delete this post? This action is irreversible.</h2>
