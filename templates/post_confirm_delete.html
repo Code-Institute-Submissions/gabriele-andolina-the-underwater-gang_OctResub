@@ -8,12 +8,18 @@
 
             <div class="mt-2 card">
                 <div class="card-body mb-5 post-form">
-                    <h2 >{{ post.title }}</h2>
+                    <h2 class="text-center"><em>{{ post.title }}</em></h2> <br>
                     <form method="post">
                         {% csrf_token %}
-                        <h2>Are you sure you want to delete this post? This action is irreversible.</h2>
-                        <button type="submit" class="btn btn-outline-danger btn-lg" aria-label="confirm-deletion">Yep, I'm sure. Delete.</button>
-                        <a class="btn btn-outline-secondary" href="{% url 'post_content' object.slug %}" aria-label="abort-deletion">Cancel</a>
+                        <h4 class="text-center">
+                            Are you sure you want to delete the post <em>"{{ post.title }}"</em>? <br>
+                            This action is irreversible.
+                        </h4>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn delete-btn mr-4" aria-label="confirm-deletion">Yep, I'm sure. Delete.</button>
+                            <a class="btn btn-outline-secondary" href="{% url 'post_content' object.slug %}" aria-label="abort-deletion">Cancel</a>
+                        </div>
+                        
                     </form>
                 </div>
             </div>

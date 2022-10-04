@@ -25,6 +25,22 @@
                     <p class="card-text">
                         {{ post.content | safe }}
                     </p>
+                    <div class="row">
+                        <div class="col-12">
+                            {% if user.id == post.author.id %}
+                            <div>
+                                <div class="d-inline mr-5">
+                                    <a href="{% url 'post_update' post.slug %}" class="btn btn-lg update-btn">Update</a>
+                                </div>
+                                <div class="d-inline ml-5">
+                                    <a href="{% url 'post_delete' post.slug %}" class="btn btn-lg delete-btn">Delete</a>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>    
                     <div class="row mb-4">
                         <div class="col-10">
                             {% if user.is_authenticated %}
@@ -59,7 +75,7 @@
                                 <form method="post">
                                     {{ comment_form | crispy }}
                                     {% csrf_token %}
-                                    <button role="button" type="submit" class="btn btn-light comment-btn">Submit</button>
+                                    <button role="button" type="submit" class="btn submit-btn">Submit</button>
                                 </form>
                                 {% endif %}
                             </div>
@@ -78,18 +94,6 @@
                         </div>
                     </div>
                     {% endif %}
-                    <div class="row">
-                        <div class="col">
-                            {% if user.id == post.author.id %}
-                            <div>
-                                <a href="{% url 'post_update' post.slug %}" class="btn btn-light comment-btn mt-4">Update this post</a>
-                            </div>
-                            <div>
-                                <a href="{% url 'post_delete' post.slug %}" class="btn btn-outline-danger mt-4">Delete this post</a>
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
                 </div> 
             </div>
         </div>

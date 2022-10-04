@@ -7,37 +7,35 @@
     {% if user.is_authenticated %}
         <div class="row">
             <div class="col-12 mt-4">
-                <a href="{% url 'log_dive' %}" class="btn btn-light btn-lg btn-block log-dive-btn" aria-label="log-dive-link">Log a dive</a>
+                <a href="{% url 'log_dive' %}" role="button" class="btn btn-light btn-lg btn-block w-50 offset-3 top-page-btn" aria-label="log-dive-link">Log a dive</a>    
             </div>
         </div>
-
         {% for dive in dive_list %}
             {% if user.id == dive.diver.id %}
                 <div class="row">
                     <div class="col-12 mt-4 mb-2 d-flex justify-content-center">
-                        <div class="card dive-card text-center">
+                        <div class="card dive-card">
                             <a href="{% url 'dive_details' dive.slug %}">
-                                <div class="card-body">
+                                <div class="card-body text-center">
                                     <h5 class="card-title"><strong>{{ dive.title }}</strong></h5>
                                     <p class="card-text">
                                     {{ dive.date }} - <em>{{ dive.location }}</em>
-                                    </p>
+                                    </p>                   
                                     {% if user.id == dive.diver.id %}
-                                    <span class="update-btn">
-                                        <a href="{% url 'update_dive' dive.slug %}" class="btn btn-light">Update</a>
-                                    </span>
-                                    <span class="delete-btn">
-                                        <a href="{% url 'delete_dive' dive.slug %}" class="btn btn-light">Delete</a>
-                                    </span>
-                                </div>
-                            </a>
-                            {% endif %}
-                        </div>
+                                    <div class="row">
+                                        <div class="col-12 mt-3 pr-5 lb-edit-btns">
+                                            <a href="{% url 'update_dive' dive.slug %}" class="btn update-btn mr-4">Update</a>
+                                            <a href="{% url 'delete_dive' dive.slug %}" class="btn delete-btn ml-4">Delete</a>
+                                        </div>                                        
+                                    </div>     
+                                    {% endif %}                                       
+                                </div>                                
+                            </a>               
+                        </div>        
                     </div>
                 </div>
             {% endif %}
         {% endfor %}
-    
     {% elif not user.is_authenticated %}
         <div class="row logbook-prompt">
             <div class="col-12 text-center">
@@ -45,15 +43,11 @@
                     <p>
                     Sorry, the logbook is only available  to registered divers! <br>
                     To access it, please sign-up here: <br>
-                    <button class="btn sign-up-btn mt-2">
-                        <a href="{% url 'account_signup' %}" aria-label="signup-link">Sign up</a>
-                    </button> <br>
+                        <a href="{% url 'account_signup' %}" role="button" class="btn sign-up-btn mt-2" aria-label="signup-link">Sign up</a> <br>
                     </p> 
                     <p>
                     If you already have an account, please sign in here: <br>
-                    <button class="btn sign-in-btn mt-2">
-                        <a href="{% url 'account_login' %}" aria-label="signin-link">Sign in</a>
-                    </button>
+                        <a href="{% url 'account_login' %}" role="button" class="btn sign-in-btn mt-2" aria-label="signin-link">Sign in</a>
                     </p>
                 </div>
                 <div class="col-12 mt-5">

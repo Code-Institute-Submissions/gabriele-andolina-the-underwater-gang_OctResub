@@ -6,7 +6,7 @@
     <div class="row">
         {% if user.is_authenticated %}
         <div class="col-12 mt-4 text-center">
-            <a href="{% url 'post_create' %}" class="btn btn-light btn-lg btn-block write-post-btn" aria-label="write-post-link">Write a post</a>
+            <a href="{% url 'post_create' %}" role="button" class="btn btn-lg btn-block w-50 offset-3 top-page-btn" aria-label="write-post-link">Write a post</a>
         </div>
         {% endif %}
         <div class="col-12 mt-4">
