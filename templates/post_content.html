@@ -5,12 +5,35 @@
 {% block content %}
 
 <div class="container">
+    <!-- Post content-->
     <div class="row justify-content-center">
         <div class="col col-md-10">
             <div class="row">
                 <div class="col col-md-12 mt-4">
-                    <h2 class="post-title mt-4"> {{ post.title }}</h2>
+                    <h2 class="post-title mt-2"><em>{{ post.title }}</em></h2>
                     <p class="author text-muted">By: {{ post.author }}</p>
+                    <!-- Like/Comments -->
+                    <div class="row mb-4">
+                        <div class="col-12 text-center">
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa-solid fa-heart"></i></button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa-regular fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <i class="fa-regular fa-heart"></i>
+                            {% endif %}
+                            {{ post.likes_tally }}
+                            {% with total=comments.count %}
+                            <i class="fa-solid fa-comment"> {{ total }}</i>
+                            {% endwith %}
+                        </div>
+                    </div>
+                    <!-- Like/Comments - End -->
                     {% if "placeholder" in post.image.url %}
                     <img class="card-img-top post-image mt-4" 
                         src="https://res.cloudinary.com/dazl3vfnm/image/upload/v1655218629/The%20Underwater%20Gang%20-%20PP4/first-post_vlo4lg.jpg" 
@@ -20,84 +43,69 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="row mb-5">
-                <div class="col col-md-12 card card-body post-content mb-5">
+            <div class="row">
+                <div class="col col-md-12 card card-body post-content">
                     <p class="card-text">
                         {{ post.content | safe }}
                     </p>
-                    <div class="row">
-                        <div class="col-12">
-                            {% if user.id == post.author.id %}
-                            <div>
-                                <div class="d-inline mr-5">
-                                    <a href="{% url 'post_update' post.slug %}" class="btn btn-lg update-btn">Update</a>
-                                </div>
-                                <div class="d-inline ml-5">
-                                    <a href="{% url 'post_delete' post.slug %}" class="btn btn-lg delete-btn">Delete</a>
-                                </div>
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
                 </div>
-            </div>    
-                    <div class="row mb-4">
-                        <div class="col-10">
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button role="button" type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa fa-solid fa-heart"></i></button>
-                                {% else %}
-                                <button role="button" type="submit" name="blogpost_id" value="{{ post.slug }}"><i class="fa fa-regular fa-heart"></i></button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <i class="fa fa-regular fa-heart"></i>
-                            {% endif %}
-                            {{ post.likes_tally }}
-                            {% with total=comments.count %}
-                            <i class="fa fa-solid fa-comment"> {{ total }}</i>
-                            {% endwith %}
-                        </div>
-                    </div>
-                    {% if user.is_authenticated %}
-                    <div class="row">
-                        <div class="col-md-5 mt-4 card comment-card">
-                            <div class="card-body">
-                                {% if commented %}
-                                <div class="alert alert-info" role="alert">
-                                    Your comment has been successfully submitted and is now awaiting approval.
-                                </div>
-                                {% else %}
-                                <h3 class="comment-title">Let us know what you think!</h3>
-                                <p>Diver: {{ user.username }}</p>
-                                <form method="post">
-                                    {{ comment_form | crispy }}
-                                    {% csrf_token %}
-                                    <button role="button" type="submit" class="btn submit-btn">Submit</button>
-                                </form>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="col-md-7 mt-4 card comment-card">
-                            <div class="card-body">
-                                <h3 class="comment-header">Comments</h3>
-                                {% for comment in comments %}
-                                <div class="card-text text-left comment-body pt-1 pl-2">
-                                    <p>By: {{ comment.name }}</p>
-                                    <p>{{ comment.content }}</p>
-                                    <p>{{ comment.created_on}}</p>                    
-                                </div>
-                                {% endfor%}
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                </div> 
             </div>
         </div>
     </div>
+    <div class="row mb-4">
+        <div class="col-12 d-flex justify-content-center">
+            {% if user.id == post.author.id %}
+                <div class="d-inline mr-5">
+                    <a href="{% url 'post_update' post.slug %}" role="button" class="btn btn-lg update-btn">Update</a>
+                </div>
+                <div class="d-inline ml-5">
+                    <a href="{% url 'post_delete' post.slug %}" role="button" class="btn btn-lg delete-btn">Delete</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Post content - End -->
+    <!-- Comment form -->
+    {% if user.is_authenticated %}
+    <div class="row">
+        <div class="col-10 offset-1 card comment-card">
+            <div class="card-body">
+                {% if commented %}
+                <div class="alert alert-info" role="alert">
+                    Your comment has been successfully submitted and is now awaiting approval.
+                </div>
+                {% else %}
+                <h3 class="comment-title text-center mb-3">Let us know what you think!</h3>
+                <p class="text-center">Diver: {{ user.username }}</p>
+                <form method="post" class="text-center">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-lg submit-btn">Submit</button>
+                </form>
+                {% endif %}
+            </div> 
+        </div>
+    </div>
+    <!-- Comment form - End -->
+    <!-- Comments -->
+    <div class="col-10 offset-1 card comment-card mb-4">
+        <div class="card-body">
+            <h3 class="comment-header mb-3">Comments</h3>
+            {% if comment %}
+                {% for comment in comments %}
+                <div class="card-text text-left comment-body pt-1 pl-2">
+                    <p>By: {{ comment.name }}</p>
+                    <p>{{ comment.content }}</p>
+                    <p>{{ comment.created_on}}</p>                    
+                </div>
+                {% endfor %}
+            {% else %}
+            <h4 class="text-center">Be the first diver to leave a comment!</h4>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Comments - End -->
+    {% endif %}     
 </div>
 
 {% endblock %}
