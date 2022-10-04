@@ -18,7 +18,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top sticky-top">
-        <a id="logo" href="{% url 'home' %}">The Underwater Gang</a>
+        <a id="logo" class="text-center" href="{% url 'home' %}">The Underwater Gang</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse-target" aria-label="menu-button">
              <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,7 +35,7 @@
                 {% url 'post_create' as url %}
                 {% if user.is_authenticated %}
                 <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'post_create' %}" aria-label="write-post-link">Write a post</a>
+                    <a class="nav-link" href="{% url 'post_create' %}" aria-label="write-post-link">Write</a>
                 </li>
                 {% endif %}
                 {% url 'logbook' as url %}
@@ -44,11 +44,9 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'log_dive' %}" aria-label="logdive-link">Log a dive</a>
+                    <a class="nav-link" href="{% url 'log_dive' %}" aria-label="logdive-link">Log</a>
                 </li>
-                {% endif %}
                 {% url 'account_logout' as url %}
-                {% if user.is_authenticated %}
                 <li class="nav-item {% if request.path == url %}active{% endif %}">
                     <a class="nav-link" href="{% url 'account_logout' %}" aria-label="logout-link">Logout</a>
                 </li>
