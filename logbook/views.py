@@ -14,6 +14,7 @@ class DiveList(generic.ListView):
     model = Dive
     queryset = Dive.objects.all()
     template_name = 'logbook.html'
+    paginate_by = 6
 
 
 class DiveDetails(LoginRequiredMixin, View):

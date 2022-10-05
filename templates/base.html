@@ -15,50 +15,50 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top sticky-top">
-        <a id="logo" class="text-center" href="{% url 'home' %}">The Underwater Gang</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top sticky-top">
+        <a id="logo" class="navbar-brand" href="{% url 'home' %}">The Underwater Gang</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse-target" aria-label="menu-button">
              <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse offset-5" id="collapse-target">
             <ul class="navbar-nav">
                 {% url 'home' as url %}
-                <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'home' %}" aria-label="home-link">Home</a>
-                </li>
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'home' %}" aria-label="home-link">Home</a>
+                    </li>
                 {% url 'blog' as url %}
-                <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'blog' %}" aria-label="blog-link">Blog</a>
-                </li>
-                {% url 'post_create' as url %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'blog' %}" aria-label="blog-link">Blog</a>
+                    </li>
                 {% if user.is_authenticated %}
-                <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'post_create' %}" aria-label="write-post-link">Write</a>
-                </li>
+                    {% url 'post_create' as url %}
+                        <li class="nav-item {% if request.path == url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'post_create' %}" aria-label="write-post-link">Write</a>
+                        </li>
                 {% endif %}
                 {% url 'logbook' as url %}
-                <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'logbook' %}" aria-label="logbook-link">Logbook</a>
-                </li>
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'logbook' %}" aria-label="logbook-link">Logbook</a>
+                    </li>
                 {% if user.is_authenticated %}
-                <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'log_dive' %}" aria-label="logdive-link">Log</a>
-                </li>
-                {% url 'account_logout' as url %}
-                <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'account_logout' %}" aria-label="logout-link">Logout</a>
-                </li>
+                    {% url 'log_dive' as url %}
+                        <li class="nav-item {% if request.path == url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'log_dive' %}" aria-label="logdive-link">Log</a>
+                        </li>
+                    {% url 'account_logout' as url %}
+                        <li class="nav-item {% if request.path == url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'account_logout' %}" aria-label="logout-link">Logout</a>
+                        </li>
                 {% else %}
-                {% url 'account_login' as url %}
-                <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'account_login' %}" aria-label="signin-link">Sign in</a>
-                </li>
-                {% url 'account_signup' as url %}
-                <li class="nav-item {% if request.path == url %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'account_signup' %}" aria-label="signup-link">Sign up</a>
-                </li>
+                    {% url 'account_login' as url %}
+                        <li class="nav-item {% if request.path == url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'account_login' %}" aria-label="signin-link">Sign in</a>
+                        </li>
+                    {% url 'account_signup' as url %}
+                        <li class="nav-item {% if request.path == url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'account_signup' %}" aria-label="signup-link">Sign up</a>
+                        </li>
                 {% endif %}
             </ul>
         </div>
@@ -68,7 +68,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                {% for message in messages%}
+                {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible fade show" id="message" role="alert">
                     {{ message | safe}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" role="button" aria-label="Close"></button>
@@ -87,7 +87,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer" class="text-center mt-auto">
+    <footer id="footer" class="text-center mt-auto navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="row footer-info d-flex align-items-center">
                 <div class="col py-3 justify-content-center">

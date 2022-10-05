@@ -9,7 +9,6 @@
 }
 
 body {
-    height: 100%;
     font-family: "Exo 2", "Times New Roman", sans-serif;
     font-weight: 400;
 }
@@ -28,10 +27,6 @@ body {
     font-family: "Exo 2", "Times New Roman", sans-serif;
     font-weight: 400;
     color: white !important;
-}
-
-ul li {
-    font-size: 18px;
 }
 
 .navbar {
@@ -65,7 +60,6 @@ ul li {
 
 #footer {
     background-color:  #00B4D8;
-    /* height: 60px; */
 }
 
 footer a {
@@ -255,12 +249,4 @@ footer a {
 
 .turtle-img {
     width: 12%;
-}
-
-.margin-div {
-    height: 30px;
-}
-
-.msg-column {
-    width: 50vw;
 }
