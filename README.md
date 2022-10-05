@@ -4,7 +4,9 @@
 
 View the live project here: https://the-underwater-gang.herokuapp.com/.
 
-The Underwater Gang is the website for a community of scuba divers, currently offering a blog for users to share their knowledge and experience on all things scuba and growing to include more features.
+The Underwater Gang is the website for a community of scuba divers; it currently offers: 
+  - a blog for users to share their knowledge and experience on all things scuba; 
+  - a personal logbook for divers to log their dives.
 
 ![A preview of the site on different screens](documentation/images/site-responsive.png)
 
@@ -12,13 +14,14 @@ The Underwater Gang is the website for a community of scuba divers, currently of
 
 ### **2.1 Site Owners' Goals**
 The goal of the three owners is to see their website become the trusted companion for a thriving community of scuba divers.  
-They want to offer a platform where ideas, tips, safety advice, personal experiences and stories can be shared by all divers, experienced or not. To do so, they offer a blog where registered users can write posts. For the community to receive true value and reliable information, all posts must be approved before being published. This will make sure that the site owners - who are experienced divers themselves - can filter out incorrect and potentially harmful information.
+They want to offer a platform where ideas, tips, safety advice, personal experiences and stories can be shared by all divers, experienced or not. To do so, they offer a blog where registered users can write and comment posts. For the community to receive true value and reliable information, all posts and comments must be approved before being published. This will make sure that the site owners - who are experienced divers themselves - can filter out incorrect and potentially harmful information.
+In addition to the blog, each registered user is offered a personal logbook, where dives with their specific info (e.g. location, depth, etc.) can be logged. This is an important tool for scuba divers, allowing them to keep track of their progress and experiences; at the same time, with its potential to encourage users to come back to the website, it is also a key feature for the growth of The Underwater Gang's community.
 
 ### **2.2. User Goals**
 * New divers:
 New divers are the first category of website users. Having recently discovered this amazing sport, they naturally want to expand their knowledge of it; they come to the website as they search for resources online. 
 * Pro divers:
-The second category of users is made up of experienced divers looking for a platform of like-minded people; they desire to share what they have learnt over the years, as well as to hear from other long-time practitioners such as diving instructors or divemasters, i.e. underwater tour guides.
+The second category of users is made up of experienced divers looking for a platform of like-minded people; they desire to share what they have learnt over the years, as well as to hear from other long-time practitioners such as diving instructors or divemasters (i.e. underwater tour guides).
 Both types of users can find a place not only to read from, but also to contribute to with their own posts.
 
 ## **3. Wireframes, User Stories & Agile Development**
@@ -28,85 +31,145 @@ A detailed report regarding user stories and agile development can be found here
 ## **4. Features**
 ### 4.1 *Existing features*
 
-This section will provide an overview of the website. Where available, two different screenshots of each page/section will be provided, in order to show the difference in outlook depending on the signed-in/not signed-in status of the user.
+This section will provide an overview of the website. Where available, two different screenshots of each page/section will be provided, in order to show the difference in outlook depending on the status of the user (not/authenticated).
 
 * Homepage
 
 ![The Underwater Gang's homepage](documentation/images/home.png)
+
 The homepage concisely informs users of what the website is and what to expect from it.
 
 * Site logo & Navigation Bar - General
 
 ![The site logo and navigation bar - general](documentation/images/navbar-general.png)
-The navbar for general, not-logged-in users shows the basic functions available to all users.
 
-* Site logo & Navigation Bar - Signed-in user
+The navbar for general users shows the basic functions available. The blog is accessible by everyone, whereas the logbook main page will prompt non-authenticated users to sign in or sign up.
 
-![The site logo and navigation bar - signed-in user](documentation/images/navbar-signedin.png)
-The navbar for logged-in users changes to reflect the signed-in status of the user. The "Sign in" and "Sign up" icons are replaced by "Write a post" and "Logout".
+* Site logo & Navigation Bar - Authenticated user
+
+![The site logo and navigation bar - authenticated user](documentation/images/navbar-signedin.png)
+
+The navbar for authenticated users changes to reflect their current status. The "Sign in" and "Sign up" icons disappear, being replaced by "Write", "Log" and "Logout".
 
 * Blog - General
 
 ![Blog - general](documentation/images/blog-general.png)
- The blog page available to all users, regardless of their status. It offers the possibility to browse and open posts.
 
-* Blog - Signed-in user
+The blog page available to all users, regardless of their status. It offers the possibility to browse and read posts.
 
-![Blog - signed-in user](documentation/images/blog-signedin.png)
- The blog page available to signed-in users. It offers the additional feature of writing a new post through the page-top button.
+* Blog - Authenticated user
+
+![Blog - authenticated user](documentation/images/blog-signedin.png)
+
+The blog page available to signed-in users. It offers the additional feature of writing a new post through the page-top button.
 
 * Post content - General
 
 ![Post content - general](documentation/images/post-general.png)
- The post content available to all users, regardless of their status. It shows a picture (not shown here) and the main content.
 
-* Post content - Signed-in user
+The post content available to all users, regardless of their status.
 
-![Post content - signed-in user](documentation/images/post-signedin.png)
- The extra features available to signed-in users, showing an additional section to post and read comments.
+* Post content - Authenticated user (1)
+
+![Post content - authenticated user 1](documentation/images/comment-box.png)
+
+The first extra feature available to authenticated users, showing an additional section to post comments.
+
+* Post content - Authenticated user (2)
+
+![Post content - authenticated user 2](documentation/images/comments.png)
+
+The second extra feature available to authenticated users, showing each post's comments, if available.
+
+* Post content - Authenticated user (3)
+
+![Post content - authenticated user 3](documentation/images/no-comments.png)
+
+An invitation for authenticated users to be the first person to leave a comment where none is present.
 
 * Post - Write
 
 ![Create post form](documentation/images/post-create.png)
+
 The form to create a new post. It offers the possibility to upload an image, write a title and the main content.
+
+* Post - Choices
+
+![Update and delete buttons](documentation/images/post-choices.png)
+
+The two buttons at the bottom of each post show only for logged in users who are the creators of the post in question. They redirect the user to the update or delete pages.
 
 * Post - Update
 
 ![Update post form](documentation/images/post-update.png)
+
 The form to update a post. It comes with the previous content already filled in.
 
 * Post - Delete
 
 ![Delete post form](documentation/images/post-delete-msg.png)
-A message that requires user confirmation for the deletion a post.
 
-* Post - Choices
+A message that requires user confirmation for the deletion of a post.
 
-![Update and delete buttons](documentation/images/post_choices.png)
-The two buttons at the bottom of the page show only for logged in users who are the creators of the post in question. They redirect the user to the update or delete pages.
+* Logbook - General
+
+![Logbook - general](documentation/images/logbook-prompt.png)
+
+The logbook's main page available to unauthenticated users, prompting them to either sign in or sign up.
+
+* Logbook - Authenticated user
+
+![Logbook - authenticated user](documentation/images/logbook-main.png)
+
+The logbook's main page available to authenticated users, showing the button to log a new dive, as well as all the previous ones and the possibility to update or delete them.
+
+* Dive content - General
+
+![Dive content - general](documentation/images/dive-content.png)
+
+The dive content with all the info previously submitted by the user.
+
+* Dive - Create
+
+![Dive form - create](documentation/images/log-dive.png)
+
+The form to log a dive.
+
+* Dive - Update
+
+![Dive form - update](documentation/images/update-dive.png)
+
+The form to update a dive. It comes with the previous content already filled in.
+
+* Dive - Delete
+
+![Dive deletion warning](documentation/images/delete-dive.png)
+
+A message that requires user confirmation for the deletion of a dive.
 
 * Sign in page
 
 ![Sign in page](documentation/images/sign-in.png)
+
 The sign in page for registered users.
 
 * Sign up page
 
 ![Sign up page](documentation/images/sign-up.png)
+
 The sign up page for new users.
 
 * Sign out page
 
 ![Sign out page](documentation/images/sign-out.png)
+
 The sign out page for logged in users.
 
 
 ### 4.2 *Features left to implement*
-* *Log book*
-   * An important addition to the website will be the creation of a logbook for divers to log new dives and browse old ones.
 * *Diver's friendbook*
-   * The goal of the website is to create a community, not only to provide a blog platform. For this reason, in the future divers will be able to add friends on their profile, thus creating meaningful human connections that hopefully extend into the real world (and sea).
-* *Standard-sized image*
+   * The goal of the website is to create a community, not only to provide a blog platform and an individual logbook. For this reason, in the future divers will be able to add friends on their profile, thus creating meaningful human connections that hopefully extend into the real world (and sea).
+* *Standard-size image*
    * The images at the top of each blog post currently vary in size. A future version of the project will provide standardised measurements to improve the aesthetic balance.
 
 ## **5. Validation and Performance**
