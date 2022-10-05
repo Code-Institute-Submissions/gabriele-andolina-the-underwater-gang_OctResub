@@ -77,10 +77,14 @@ footer a {
     font-style: italic;
 }
 
-.post-link {
+.post-link, .dive-link {
     text-align: center;
-    text-decoration: underline;
     color: black;
+}
+
+.post-link:hover, .dive-link:hover {
+    text-align: center;
+    color: #00B4D8;
 }
 
 .card-text {
@@ -171,11 +175,6 @@ footer a {
     border: solid 2px #F79235 !important;
     background-color: white;
     color: #F79235;
-}
-
-.lb-edit-btns {
-    position: relative;
-    right: 2%;
 }
 
 .sign-up-btn {

@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-12 mt-4 mb-2 d-flex justify-content-center">
                         <div class="card dive-card">
-                            <a href="{% url 'dive_details' dive.slug %}">
+                            <a href="{% url 'dive_details' dive.slug %}" class="dive-link">
                                 <div class="card-body text-center">
                                     <h5 class="card-title"><strong>{{ dive.title }}</strong></h5>
                                     <p class="card-text">
@@ -23,7 +23,7 @@
                                     </p>                   
                                     {% if user.id == dive.diver.id %}
                                     <div class="row">
-                                        <div class="col-12 mt-3 pr-5 lb-edit-btns">
+                                        <div class="col-12 mt-3 text-center">
                                             <a href="{% url 'update_dive' dive.slug %}" class="btn update-btn mr-4">Update</a>
                                             <a href="{% url 'delete_dive' dive.slug %}" class="btn delete-btn ml-4">Delete</a>
                                         </div>                                        
