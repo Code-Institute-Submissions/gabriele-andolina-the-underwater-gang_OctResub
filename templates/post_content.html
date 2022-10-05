@@ -88,14 +88,14 @@
     </div>
     <!-- Comment form - End -->
     <!-- Comments -->
-    <div class="col-10 offset-1 card comment-card mb-4">
+    <div class="col-10 offset-1 card comment-card">
         <div class="card-body">
             <h3 class="comment-header mb-3">Comments</h3>
-            {% if comment.approved is False %}
+            {% if not comments %}
             <h4 class="text-center">Be the first diver to leave a comment!</h4>
             {% else %}
                 {% for comment in comments %}
-                <div class="card-text text-left comment-body pt-1 pl-2">
+                <div class="card-text text-left comment-body pt-1 pl-2 mb-4">
                     <p>By: {{ comment.name }}</p>
                     <p>{{ comment.content }}</p>
                     <p>{{ comment.created_on}}</p>                    
