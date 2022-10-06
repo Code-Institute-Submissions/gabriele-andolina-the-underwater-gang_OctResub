@@ -8,21 +8,21 @@ No. | Action | Result
 -- | -- | --
 1 | Display homepage | ✔︎
 2 | Navbar links are properly connected and lead to their related page | ✔︎
-3 | Navbar displays general links for unregistered/not logged users | ✔︎
+3 | Navbar displays general links for unregistered/unauthenticated users | ✔︎
 4 | Blog posts open upon click | ✔︎
-5 | Blog posts only reveal image, main content, and likes and comments number if opened by an unregistered user | ✔︎
+5 | Blog posts only reveal image, main content, and likes and comments number if opened by an unregistered or unauthenticated user | ✔︎
 6 | Navigation buttons allow for navigation within the blog page, leading the user to the requested page | ✔︎
 7 | Sign in page shows its related form | ✔︎
 8 | Sign in button allows the user to enter its account | ✔︎
 9 | Successful sign in message shows after sign in | ✔︎
 10 | Navbar links change to reflect logged in status and functionality for registered users | ✔︎
-11 | Blog page and navbar show a "Write" button when user is logged in | ✔︎
-12 | "Write a post" button on navbar and blog page leads to post form | ✔︎
+11 | Blog page and navbar show "Write a post" and "Write" buttons when user is logged in | ✔︎
+12 | "Write" button on navbar and "Write a post" button on blog page lead to post form | ✔︎
 13 | Post form allows upload of image, title and content | ✔︎
-14 | Post form cannot be submitted without key information (title and content) | ✔︎
+14 | Post form cannot be submitted without key information | ✔︎
 15 | Blog post displays comment form for registered users | ✔︎
 16 | When present, blog post shows previous comments | ✔︎
-17 | If the logged in user is also the post's author, the blog displays "Update this post" and "Delete this post" buttons  | ✔︎
+17 | If the authenticated user is also the post's author, the blog displays "Update this post" and "Delete this post" buttons  | ✔︎
 18 | "Update this post" button allows user to update post | ✔︎
 19 | Update confirmation message shows when post is updated | ✔︎
 20 | "Delete this post" buttons allow user to delete post | ✔︎
@@ -48,6 +48,7 @@ No. | Action | Result
 40 | Admin: Post actions include "delete" | ✔︎
 41 | Admin: Post status can be changed from "draft" to "published" to show post in blog page | ✔︎
 42 | Admin: Logbook page shows sign in/sign up prompt for unauthenticated users | ✔︎
+43 | Admin: Access to personal dives by unauthorised users is forbidden | ✔︎
 
 ## **2. Known Bugs**
 
