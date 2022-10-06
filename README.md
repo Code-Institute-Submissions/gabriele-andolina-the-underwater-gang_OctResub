@@ -8,8 +8,6 @@ The Underwater Gang is the website for a community of scuba divers; it currently
   - a blog for users to share their knowledge and experience on all things scuba; 
   - a personal logbook for divers to log their dives.
 
-![A preview of the site on different screens](documentation/images/site-responsive.png)
-
 ## **2. General User Goals** 
 
 ### **2.1 Site Owners' Goals**
@@ -24,9 +22,9 @@ New divers are the first category of website users. Having recently discovered t
 The second category of users is made up of experienced divers looking for a platform of like-minded people; they desire to share what they have learnt over the years, as well as to hear from other long-time practitioners such as diving instructors or divemasters (i.e. underwater tour guides).
 Both types of users can find a place not only to read from, but also to contribute to with their own posts.
 
-## **3. Wireframes, User Stories & Agile Development**
+## **3. Wireframes & Database, User Stories & Agile Development**
 
-A detailed report regarding user stories and agile development can be found here: [Wireframes, User Stories & Agile Development](documentation/Agile.md).
+A detailed report regarding user stories and agile development can be found here: [Wireframes & Database, User Stories & Agile Development](documentation/Agile.md).
 
 ## **4. Features**
 ### 4.1 *Existing features*
@@ -176,7 +174,7 @@ The sign out page for logged in users.
 ### 5.1 *Validator Testing*
 * HTML
    * The final version of the code is free of errors when passed through the official W3C Markup Validator via URI.  
-   However, a difference was noted upon checking the .html files individually as opposed to validation via URI. Since this is a Django-based project, the source code had to be retrieved by right-clicking on each page in the front-end, then selecting the "View page source" option. In fact, the markup validation service is not able to recognize the Jinja templating language.
+   However, a difference was noted upon checking the .html files individually as opposed to validation via URI. Since this is a Django-based project, the source code had to be retrieved by right-clicking on each page in the front-end, then selecting the "View page source" option. In fact, the markup validation service is not able to recognize the Jinja templating language and throws several errors because of this.
 
    ![W3C HTML Validation](documentation/images/html-validation.png)
 
@@ -186,7 +184,9 @@ The sign out page for logged in users.
    ![W3C CSS Validation](documentation/images/css-validation.png)
 
 * PEP8
-   * The .py files in the blog app of the current project were passed individually through a PEP8 validator and no errors were returned.
+   * The .py files in the blog and logbook apps were passed individually through the https://www.pythonchecker.com/ PEP8 validator. The general results vary from around 50% to more than 90%, showing however no errors. In order to explain this gap in results, two things need to be noted here: 
+     1) The lower results are mostly due to unimplemented suggestions with regard to spacing before and after some operators (such as, for instance, the "=" sign); in this case, I have decided not to implement the given suggestions as they were not crucial to the overall style or syntax.
+     2) Some indentation warnings not raised by the linter in the Gitpod environment were instead raised by the above mentioned checker. In this case, I have thought it safest to follow the suggestions of the linter in Gitpod, since it is there that the code was written. The indentation warnings were, in any case, merely related to the breaking of a function's arguments into two lines (for matters of overall line length) and were not Python syntactic errors.  
 
 ### 5.2 *Responsiveness*
 The site is fully responsive. 
