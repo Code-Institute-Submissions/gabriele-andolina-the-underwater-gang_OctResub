@@ -19,7 +19,7 @@ class DiveList(generic.ListView):
     paginate_by = 6
 
 
-class DiveDetails(LoginRequiredMixin, View):
+class DiveDetails(LoginRequiredMixin, UserPassesTestMixin, View):
 
     """
     A view to show the full details for each logged dive.
@@ -36,6 +36,12 @@ class DiveDetails(LoginRequiredMixin, View):
                 'dive': dive,
             },
         )
+
+    def test_func(self):
+        dive = self.get_object()
+        if self.request.user == dive.diver:
+            return True
+        return False
 
 
 class LogDive(LoginRequiredMixin, SuccessMessageMixin, CreateView):
