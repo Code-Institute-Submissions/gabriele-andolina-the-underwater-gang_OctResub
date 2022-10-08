@@ -53,7 +53,7 @@
         </div>
     </div>
     <div class="row mb-4">
-        <div class="col-12 d-flex justify-content-center post-edit-btns">
+        <div class="col-12 d-flex justify-content-center edit-delete-btns mt-3">
             {% if user.id == post.author.id %}
                 <div class="d-inline mr-5">
                     <a href="{% url 'post_update' post.slug %}" role="button" class="btn btn-lg update-btn">Update</a>

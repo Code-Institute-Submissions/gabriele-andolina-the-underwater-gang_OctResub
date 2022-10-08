@@ -254,6 +254,15 @@ footer a {
 
 /******************** Media Queries ********************/
 
+/******************** Screens of 1024px width and down ********************/
+
+@media screen and (max-width: 1024px) {
+    .hero-img, .welcome-msg, .logbook-prompt {
+        position: relative;
+        top: 25vh;
+    }
+  }
+
 /******************** Screens of 380px width and down ********************/
 
 @media screen and (max-width: 380px) {
@@ -294,7 +303,7 @@ footer a {
     }
 
     .top-page-btn, .main-content, .pagination, .main-form, 
-    .post-top, .post-edit-btns, .comment-card, .delete-msg, 
+    .post-top, .edit-delete-btns, .comment-card, .delete-msg, 
     .dive-card, .credentials-box, .logbook-prompt {
         position: relative;
         left: 15vw;
