@@ -7,7 +7,7 @@
 <div class="container">
     <!-- Post content-->
     <div class="row justify-content-center">
-        <div class="col col-md-10">
+        <div class="col col-md-10 post-top">
             <div class="row">
                 <div class="col col-md-12 mt-4">
                     <h2 class="post-title mt-2"><em>{{ post.title }}</em></h2>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-md-12 card card-body post-content">
+                <div class="col col-md-12 card card-body main-content">
                     <p class="card-text">
                         {{ post.content | safe }}
                     </p>
@@ -53,7 +53,7 @@
         </div>
     </div>
     <div class="row mb-4">
-        <div class="col-12 d-flex justify-content-center">
+        <div class="col-12 d-flex justify-content-center post-edit-btns">
             {% if user.id == post.author.id %}
                 <div class="d-inline mr-5">
                     <a href="{% url 'post_update' post.slug %}" role="button" class="btn btn-lg update-btn">Update</a>

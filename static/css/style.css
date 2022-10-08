@@ -256,14 +256,13 @@ footer a {
 
 /******************** Screens of 380px width and down ********************/
 
-
 @media screen and (max-width: 380px) {
     .navbar {
-      width: 120vw;
+      width: 100vw;
     }
 
     #footer {
-        width: 120vw;
+        width: 100vw;
         position: relative;
         bottom: 0;
     }
@@ -271,15 +270,9 @@ footer a {
     .footer-margin {
         height: 300px;
     }
-
-    /* .main-content {
-        position: relative;
-        left: 10%;
-    } */
   }
 
 /******************** Screens of 320px width and down ********************/
-
 
 @media screen and (max-width: 320px) {
     .navbar {
@@ -290,8 +283,20 @@ footer a {
         width: 130vw;
     }
 
-    /* .main-content {
+    .footer-info {
         position: relative;
-        left: 10%;
-    } */
+        left: auto;
+    }
+
+    .hero-img, .welcome-msg {
+        position: relative;
+        left: 25%;
+    }
+
+    .top-page-btn, .main-content, .pagination, .main-form, 
+    .post-top, .post-edit-btns, .comment-card, .delete-msg, 
+    .dive-card, .credentials-box, .logbook-prompt {
+        position: relative;
+        left: 15vw;
+    }
   }
