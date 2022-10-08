@@ -24,8 +24,8 @@
                                     {% if user.id == dive.diver.id %}
                                     <div class="row">
                                         <div class="col-12 mt-3 text-center">
-                                            <a href="{% url 'update_dive' dive.slug %}" class="btn update-btn mr-4">Update</a>
-                                            <a href="{% url 'delete_dive' dive.slug %}" class="btn delete-btn ml-4">Delete</a>
+                                            <a href="{% url 'update_dive' dive.slug %}" class="btn update-btn mb-2">Update</a>
+                                            <a href="{% url 'delete_dive' dive.slug %}" class="btn delete-btn mb-2">Delete</a>
                                         </div>                                        
                                     </div>     
                                     {% endif %}                                       
