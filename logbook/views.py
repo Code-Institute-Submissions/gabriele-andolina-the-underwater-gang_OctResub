@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -20,28 +20,28 @@ class DiveList(generic.ListView):
 
 
 class DiveDetails(LoginRequiredMixin, UserPassesTestMixin, View):
-
     """
     A view to show the full details for each logged dive.
     """
-
+    model = Dive
     def get(self, request, slug, *args, **kwargs):
         queryset = Dive.objects.all()
         dive = get_object_or_404(queryset, slug=slug)
 
-        return render(
-            request,
-            'dive_details.html',
-            {
-                'dive': dive,
-            },
-        )
+        if dive.diver == self.request.user:
+
+            return render(
+                request,
+                'dive_details.html',
+                {
+                    'dive': dive,
+                },
+            )
+        else:
+            return redirect('logbook')
 
     def test_func(self):
-        dive = self.get_object()
-        if self.request.user == dive.diver:
-            return True
-        return False
+        return True
 
 
 class LogDive(LoginRequiredMixin, SuccessMessageMixin, CreateView):
