@@ -9,11 +9,8 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col col-md-8 mt-5 jumbotron credentials-box">
-      
       <h1 class="form-title">{% trans "Sign Out" %}</h1>
-
       <p>{% trans 'Are you sure you want to sign out?' %}</p>
-      
       <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
         {% if redirect_field_value %}
@@ -21,9 +18,9 @@
         {% endif %}
         <button class="btn sign-out-btn" role="button" type="submit">{% trans 'Sign Out' %}</button>
       </form>
-
     </div>
   </div>
+  <div class="footer-margin"></div>
 </div>
 
 {% endblock %}

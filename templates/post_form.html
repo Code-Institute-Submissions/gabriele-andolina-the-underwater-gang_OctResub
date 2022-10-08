@@ -5,7 +5,7 @@
 {% block content%}
 
 <div class="container-fluid">
-    <div class="row ">
+    <div class="row">
         <div class="col-10 offset-1 mt-4">
             <div class="card mt-2 mb-4 border-dark">
                 <div class="card-body mb-5">
@@ -17,13 +17,14 @@
                     <form method="post" enctype="multipart/form-data">
                         {{ form | crispy }}
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-lg update-btn" aria-label="post-button">Post</button>
+                        <button type="submit" class="btn btn-lg update-btn justify-content-end" aria-label="post-button">Post</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="footer-margin"></div>
 <div class="container-fluid">
     <div class="row">
         <div class="col">

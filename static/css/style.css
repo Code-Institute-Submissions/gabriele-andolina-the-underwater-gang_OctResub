@@ -11,6 +11,7 @@
 body {
     font-family: "Exo 2", "Times New Roman", sans-serif;
     font-weight: 400;
+    height: 100vh;
 }
 
 /******************** Navbar ********************/
@@ -249,3 +250,48 @@ footer a {
 .turtle-img {
     width: 12%;
 }
+
+
+/******************** Media Queries ********************/
+
+/******************** Screens of 380px width and down ********************/
+
+
+@media screen and (max-width: 380px) {
+    .navbar {
+      width: 120vw;
+    }
+
+    #footer {
+        width: 120vw;
+        position: relative;
+        bottom: 0;
+    }
+
+    .footer-margin {
+        height: 300px;
+    }
+
+    /* .main-content {
+        position: relative;
+        left: 10%;
+    } */
+  }
+
+/******************** Screens of 320px width and down ********************/
+
+
+@media screen and (max-width: 320px) {
+    .navbar {
+      width: 130vw;
+    }
+
+    #footer {
+        width: 130vw;
+    }
+
+    /* .main-content {
+        position: relative;
+        left: 10%;
+    } */
+  }
