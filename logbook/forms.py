@@ -1,4 +1,3 @@
-from django_summernote.widgets import SummernoteWidget
 from django import forms
 from .models import Dive
 
@@ -13,6 +12,3 @@ class DiveForm(forms.ModelForm):
         fields = ('title', 'date', 'location', 'diving_site',
                   'duration', 'depth', 'gas_mixture', 'air_in',
                   'air_out', 'visibility', 'description')
-        widgets = {
-            'description': SummernoteWidget(),
-        }
