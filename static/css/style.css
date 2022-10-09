@@ -263,28 +263,29 @@ footer a {
     }
   }
 
-/******************** Screens of 580px width and down ********************/
+/******************** Screens of 680px width and down ********************/
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 680px) {
+    
 .hero-img, .welcome-msg {
     position: relative;
-    top: 5vh;
+    top: 10%;
 }
 
 .logbook-prompt {
     position: relative;
-    top: 5vh;
+    top: 10%;
 }
 
 /******************** Screens of 420px width and down ********************/
 
 @media screen and (max-width: 420px) {
     .navbar {
-      width: 100vw;
+      width: 105vw;
     }
 
     #footer {
-        width: 100vw;
+        width: 105vw;
         position: relative;
         bottom: 0;
     }
@@ -322,3 +323,4 @@ footer a {
         left: 15vw;
     }
   }
+}
