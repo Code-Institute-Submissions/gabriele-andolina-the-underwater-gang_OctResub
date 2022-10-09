@@ -16,7 +16,7 @@
                     {% endif %}
                     <form method="post" enctype="multipart/form-data">
                         {{ form | crispy }}
-                        {% csrf_token %}
+                        {% csrf_token %}                    
                         <button type="submit" class="btn btn-lg update-btn justify-content-end" aria-label="post-button">Post</button>
                     </form>
                 </div>
