@@ -11,7 +11,7 @@ from .forms import CommentForm, PostForm
 class PostList(generic.ListView):
 
     """
-    A view to display all posts on main blog page.
+    A view to display all posts on the main blog page.
     """
 
     model = Post

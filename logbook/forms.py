@@ -5,7 +5,6 @@ from .models import Dive
 class DiveForm(forms.ModelForm):
     """
     Sets model and fields for Dive form.
-    Provides front-end user with Summernote widget.
     """
     class Meta:
         model = Dive

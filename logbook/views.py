@@ -8,11 +8,9 @@ from .forms import DiveForm
 
 
 class DiveList(generic.ListView):
-
     """
     A view to show a list of all logged dives.
     """
-
     model = Dive
     queryset = Dive.objects.all()
     template_name = 'logbook.html'
@@ -45,11 +43,9 @@ class DiveDetails(LoginRequiredMixin, UserPassesTestMixin, View):
 
 
 class LogDive(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-
     """
-    A view to allow users to log a dive in their logbook.
+    A view to allow users to log a new dive in their logbook.
     """
-
     model = Dive
     form_class = DiveForm
     template_name = 'dive_form.html'
@@ -63,11 +59,9 @@ class LogDive(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class UpdateDive(LoginRequiredMixin, SuccessMessageMixin,
                  UserPassesTestMixin, UpdateView):
-
     """
     A view to allow users to update a logged dive in their logbook.
     """
-
     template_name = 'dive_form.html'
     success_url = '/'
     success_message = "Krilliant! Your dive log has been updated successfully."
@@ -87,11 +81,9 @@ class UpdateDive(LoginRequiredMixin, SuccessMessageMixin,
 
 
 class DeleteDive(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-
     """
     A view to allow users to delete a logged dive from their logbook.
     """
-
     template_name = 'dive_confirm_delete.html'
     success_url = '/'
     success_message = "Your dive has been deleted successfully!"

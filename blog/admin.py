@@ -6,7 +6,7 @@ from .models import Post, Comment
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     """
-    Defines post display characteristics in admin panel.
+    Defines Post display characteristics in admin panel.
     Provides admin with filter and search post functionality.
     """
 
@@ -20,7 +20,7 @@ class PostAdmin(SummernoteModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     """
-    Defines comment display characteristics in admin panel.
+    Defines Comment display characteristics in admin panel.
     Provides admin with filter, search and approve post functionality.
     """
 
