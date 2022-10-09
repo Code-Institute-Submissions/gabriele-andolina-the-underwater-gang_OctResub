@@ -256,16 +256,29 @@ footer a {
 
 /******************** Screens of 1024px width and down ********************/
 
-@media screen and (min-width: 380px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .hero-img, .welcome-msg, .logbook-prompt {
         position: relative;
         top: 25vh;
     }
   }
 
-/******************** Screens of 380px width and down ********************/
+/******************** Screens of 580px width and down ********************/
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 620px) {
+.hero-img, .welcome-msg {
+    position: relative;
+    top: 5vh;
+}
+
+.logbook-prompt {
+    position: relative;
+    top: 5vh;
+}
+
+/******************** Screens of 420px width and down ********************/
+
+@media screen and (max-width: 420px) {
     .navbar {
       width: 100vw;
     }
