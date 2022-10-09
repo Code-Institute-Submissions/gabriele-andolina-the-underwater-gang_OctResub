@@ -2,7 +2,7 @@
 
 ## **1. Wireframes**
 
-The detailed wireframes for this project can be found here: [Wireframes](/documentation/wireframes.md).
+The detailed wireframes and database schema for this project can be found here: [Wireframes & Database](/documentation/wireframes.md).
 
 ## **2. User Stories - Description and Testing**
 ### **2.1 User Stories - Description** 
