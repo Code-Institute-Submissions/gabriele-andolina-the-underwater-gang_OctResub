@@ -4,7 +4,7 @@
 
 View the live project here: https://the-underwater-gang.herokuapp.com/.
 
-The Underwater Gang is the website for a community of scuba divers; it currently offers: 
+The Underwater Gang is the website for a community of scuba divers currently offering: 
   - a blog for users to share their knowledge and experience on all things scuba; 
   - a personal logbook for divers to log their dives.
 
@@ -37,19 +37,19 @@ This section will provide an overview of the website. Where available, two diffe
 
 The homepage concisely informs users of what the website is and what to expect from it.
 
-* Site logo & Navigation Bar - General
+* Site logo & Navigation Bar - General user
 
 ![The site logo and navigation bar - general](documentation/images/navbar-general.png)
 
-The navbar for general users shows the basic functions available. The blog is accessible by everyone, whereas the logbook main page will prompt non-authenticated users to sign in or sign up.
+The navbar for general users shows the basic functions available. The blog is accessible by everyone, whereas the logbook main page will prompt non-authenticated users to either sign in or sign up.
 
 * Site logo & Navigation Bar - Authenticated user
 
 ![The site logo and navigation bar - authenticated user](documentation/images/navbar-signedin.png)
 
-The navbar for authenticated users changes to reflect their current status. The "Sign in" and "Sign up" icons disappear, being replaced by "Write", "Log" and "Logout".
+The navbar for authenticated users changes to reflect their current status. The "Sign in" and "Sign up" links disappear, being replaced by "Write", "Log" and "Logout".
 
-* Blog - General
+* Blog - General user
 
 ![Blog - general](documentation/images/blog-general.png)
 
@@ -59,7 +59,7 @@ The blog page available to all users, regardless of their status. It offers the 
 
 ![Blog - authenticated user](documentation/images/blog-signedin.png)
 
-The blog page available to signed-in users. It offers the additional feature of writing a new post through the page-top button.
+The blog page available to authenticated users. It offers the additional feature of writing a new post through the page-top button.
 
 * Post content - General
 
@@ -109,7 +109,7 @@ The form to update a post. It comes with the previous content already filled in.
 
 A message that requires user confirmation for the deletion of a post.
 
-* Logbook - General
+* Logbook - General user
 
 ![Logbook - general](documentation/images/logbook-prompt.png)
 
@@ -163,12 +163,18 @@ The sign up page for new users.
 
 The sign out page for logged in users.
 
+* Messages
+
+![Messages](documentation/images/messages.png)
+
+Messages are shown throughout the site to provide a feedback to user action (such as signing in/out, creating a post or logging a dive, etc.).
+
 
 ### 4.2 *Features left to implement*
 * *Diver's friendbook*
-   * The goal of the website is to create a community, not only to provide a blog platform and an individual logbook. For this reason, in the future divers will be able to add friends on their profile, thus creating meaningful human connections that hopefully extend into the real world (and sea).
+   * The goal of the website is to create a community, not only to provide a blog platform and an individual logbook. For this reason, in the future, divers will be able to add friends on their profile, thus creating meaningful human connections that hopefully extend into the real world (and sea).
 * *Standard-size image*
-   * The images at the top of each blog post currently vary in size. A future version of the project will provide standardised measurements to improve the aesthetic balance.
+   * The images at the top of each blog post currently vary in size. A future version of the project will provide standardised measurements to improve an aesthetic balance to the page.
 
 ## **5. Validation and Performance**
 ### 5.1 *Validator Testing*
@@ -184,9 +190,9 @@ The sign out page for logged in users.
    ![W3C CSS Validation](documentation/images/css-validation.png)
 
 * PEP8
-   * The .py files in the blog and logbook apps were passed individually through the https://www.pythonchecker.com/ PEP8 validator. The general results vary from around 50% to more than 90%, showing however no errors. In order to explain this gap in results, two things need to be noted here: 
+   * The .py files in the blog and logbook apps were passed individually through the https://www.pythonchecker.com/ PEP8 validator. The general results vary in style accuracy from around 50% to more than 90%, showing however no errors. In order to explain this gap in results, two things need to be noted here: 
      1) The lower results are mostly due to unimplemented suggestions with regard to spacing before and after some operators (such as, for instance, the "=" sign); in this case, I have decided not to implement the given suggestions as they were not crucial to the overall style or syntax.
-     2) Some indentation warnings not raised by the linter in the Gitpod environment were instead raised by the above mentioned checker. In this case, I have thought it safest to follow the suggestions of the linter in Gitpod, since it is there that the code was written. The indentation warnings were, in any case, merely related to the breaking of a function's arguments into two lines (for matters of overall line length) and were not Python syntactic errors.  
+     2) Some indentation warnings not raised by the linter in the Gitpod environment were instead raised by the above mentioned checker. In this case, I have thought it safest to follow the suggestions of the linter in Gitpod, since it is there that the code was written. The indentation warnings were, in any case, merely related to the breaking of a function's arguments into two lines (for matters of overall line length) and were not strictly syntactic errors.  
 
 ### 5.2 *Responsiveness*
 The site is fully responsive. 
@@ -230,11 +236,10 @@ The detailed procedure for deployment can be found here: [Deployment](documentat
    * **CSS3**
    * **Python**
    * **Django**
-   * **Bootstrap**
+   * **Bootstrap 4**
 
 * Websites and Softwares
    * **Balsamiq**: used to create the website's wireframes (see the 'documentation/wireframes' folder)
-   * **Font Awesome**: FA's icons were used to create the social media links found in the website's footer.
    * **Git**: Git was used for version control through the Gitpod terminal, to add, commit and push the project's updates to GitHub.
    * **GitHub**: GitHub was used to store the project's repository.
    * **Heroku**: Heroku was used to host the deployed project.
@@ -242,13 +247,13 @@ The detailed procedure for deployment can be found here: [Deployment](documentat
    * **ColorSpace and ColorHunt**: The color palette used in the project was created on these websites.
    * **Asana**: Used for creating and storing user stories, and to keep track of the development process.
    * **Pexels**: For post images.
-   * **Icons8**: For the homepage drawing.
+   * **Icons8**: For the homepage and logbook drawings.
 
 ## **9. Credits**
 ### 9.1 *Credits*
 All code was written by me personally. However, during the development process I relied considerably on the Code Institute *I Think Therefore I Blog* walkthrough project and Corey Schafer's Django tutorials. 
 ### 9.2 *Content*
-The entirety of the content found on the website has been created by me personally. I drew from my personal experiences as a new scuba diver to create the text found in the two posts by the website creators, while creating other content for the remaining posts.
+The entirety of the content found on the website has been created by me personally. I drew from my personal experiences as a new scuba diver to create the text found in the two posts by the website creators and the logged dive by The_Gang user/admin, while creating other content for the remaining posts.
 ### 9.3 *Media*
 All the images displayed on the website were downloaded from Unsplash.com and Pexels.com. Here follows the list of the photographers whose work has made this project possible:
    * *Welcome to our blog!* photo by Pixabay 
@@ -257,13 +262,13 @@ All the images displayed on the website were downloaded from Unsplash.com and Pe
    * *Whale Shark!* photo by Emma Li
    * *About us...* photo by Ayman Zaki
 
-The drawing on the homepage was downloaded from Icons 8.
+The drawings on the homepage and on the logbook main page for unauthenticated users were downloaded from Icons 8.
 
 ## **10. Acknowledgments**
 
 This project would have been impossible without the help of some incredible people, whom I wish to thank here.
 - A special thank you goes to my mentor, Mr Richard Wells, for continuous guidance, suggestions and much needed encouragement. Thank you also for pushing me to do more, to go beyond my limits. It is a lesson I am still in the process of learning.
-- Thank you to the talented people of the Tutoring team that helped me out: Ed, Alex, John and Sean. You have been very kind and tremendously helpful as I struggled with some parts of my project.
+- Thank you to the talented people of the Tutoring team that helped me out: Ed, Alex, John and Sean. You have been very kind and tremendously helpful as I struggled with some parts of my work.
 - The highest praise and thanks go to God, the greatest Coder of all eternity. To Him, who has shown his eternal love for all of us in Jesus Christ. To Him, whom I owe everything.
 
 

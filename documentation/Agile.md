@@ -9,7 +9,7 @@ The detailed wireframes for this project can be found here: [Wireframes](/docume
 
 In crafting the user stories for The Underwater Gang, I made use of the MoSCoW technique.
 
-It is a complete list, including also those user stories intended for or eventually postponed to a future release.
+This is a complete list, including also those user stories intended for or eventually postponed to a future release.
 
 No. | User Story
 --- | ----------
@@ -53,7 +53,7 @@ No. | User Story | Result
 13  | As an admin, I can approve comments so that inappropriate and/or offensive content can be left out of the community. | Pass
 14  | As an admin, I can manage all blog posts so that the community may be a place which offers true value and correct information to all its users. | Pass
 15  | As a registered user, I can log a new dive so I can keep track of my progress and experiences underwater. | Pass
-16  | As a registered user, I can always view a list of previous dives on my profile's page so I can easily access them at any time. | Fail
+16  | As a registered user, I can always view a list of previous dives on my profile's page so I can easily access them at any time. | Pass
 17  | As a registered user, I can create, read, update and delete my dives so I can keep my personal logbook updated and relevant.  | Pass
 
 #### **2.2.2 User Stories for Future Release**
@@ -80,7 +80,12 @@ On Asana, I created my user stories according to the MoSCoW technique, assigning
 ![Kanban board - 2](/documentation/images/project-board-2.png)
 ![Kanban board - 3](/documentation/images/project-board-3.png)
 
-### **3.2 Things to note/improve:**
+### **3.2 Logbook App Implementation:**
+
+The first version of the project did not have the logbook app, the user stories of which (15 through 17) do not appear in the kanban board shown above. The bulk of these (to complete all CRUD functions) were implemented in the course of one sprint that lasted from September 27 to October 4, 2022, as observable in the commits history.
+
+### **3.3 Things to note/improve:**
 - *Poor planning:* as I started working on my project, I realised my planning had been insufficient in terms of the specificity necessary to each user story. This resulted, for instance, in subsequent updates to some user stories, as well as in a back-and-forth process between the *In progress* and *Done* sections of the board at various stages.
 - *Lack of user story points:* Due to me learning both a new framework and a new methodology (Agile) I found it impossible to give an estimate of the points for each user story. For this reason, I relied solely on the MoSCoW paradigm. 
+- *Use of test_func:* The current version of the project still makes use of test_func in order to validate the identity of the authenticated user as the author/diver of a post or dive. The project assessor's previous feedback on this as a sign of poor practice has been duly noted; however I have not been able to implement a suitable solution before submission. In fact, when resuming work on the project and trying to improve this point, I have realised that, if I tried to remove or at least rename the test_func, Django would throw a NotImplementedError specifically related to the lack of it. I am aware of the need to refactor this portion of the code and to avoid repetition (as the same function appears multiple times in the code) and will work to find a solution.
 
